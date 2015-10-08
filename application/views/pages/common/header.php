@@ -12,139 +12,42 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="<?php echo site_url('main/homepage') ?>">GBU Online
+            <a class="navbar-brand" href="<?php echo site_url('') ?>">GBU Alumni
 
             </a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" >
-            <ul class="nav navbar-nav">
+            <ul class="nav navbar-nav" style="margin-left: 250px;">
 
                 <li class="dropdown">
-                    <a href="http://gbuonline.in/timetables"  target="_blank">
-                        <font size="2"> <span class="glyphicon glyphicon-file" aria-hidden="true"></span> Time Tables</font>
+                    <a href=""  target="_blank">
+                        <font size="2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Distinguished Alumni</font>
                     </a>
-
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                        <span class="glyphicon glyphicon-education" aria-hidden="true"></span>&nbsp;Schools</font><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-						<?php
-						$schools = $this->db->query("select sc_name from schools order by CHAR_LENGTH(sc_name)");
-						foreach ($schools->result() as $row)
-						{
-						?>
-							<li><a href="<?php echo site_url().'schools/view/'.$row->sc_name ?>"><?=strtoupper($row->sc_name)?></a></li>
-						<?php
-						}
-						?>
-                    </ul>
+				<li class="dropdown" style="margin-left: 50px;">
+                    <a href=""  target="_blank">
+                        <font size="2"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Alumni List</font>
+                    </a>
                 </li>
-                <!--
-                <li>
-                    <a href="<?php echo $this->cdn->res_url('resources/images/ac-15-16.jpg') ?>"><font size="2"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>&nbsp;Academic Calendar</font></a>
-                  
-                </li>-->
-
-                <li class="dropdown">
-                    <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;Hostels</font><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo site_url('hostels/home') ?>">Home</a></li>
-                        <li><a href="<?php echo site_url('hostels/info') ?>">Hostel Details</a></li>
-                        <li><a href="<?php echo site_url('hostels/studentinfo') ?>">Student Info</a></li>
-                        <li><a href="<?php echo site_url('hostels/notice') ?>">Hostel Notices</a></li>
-                        <li><a href="<?php echo site_url('hostels/wardens') ?>">Wardens List</a></li>
-
-                        <li role="separator" class="divider"></li>
-
-                        <li><a href="<?php echo site_url('hostels/specific#go3') ?>">Hostel Allotment List</a></li>
-
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="<?php echo site_url('hostels/rc') ?>"style="text-decoration:none;">Room Change Request</a>	
-                        </li>
-
-                        <li role="separator" class="divider"></li>
-                        <li>
-                            <a href="<?php echo $this->cdn->res_url('resources/hostel_allocation/mess.jpg') ?>" style="text-decoration:none;">Mess Menu</a>	
-                        </li>
-                    </ul>
+				<li class="dropdown" style="margin-left: 50px;">
+                    <a href="<?=site_url('alumni/events')?>"  target="_blank">
+                        <font size="2"> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Events</font>
+                    </a>
                 </li>
-                <li>
-                    <a href="<?php echo base_url('alumni') ?>"style="text-decoration:none;"><font size="2"> <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Alumni</font></a>	
+				<li class="dropdown" style="margin-left: 50px;">
+                    <a href=""<?=site_url('alumni/gallery')?>""  target="_blank">
+                        <font size="2"> <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Gallery</font>
+                    </a>
                 </li>
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                        <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;More</font><span class="caret"></span></a>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="<?php echo site_url('feat/vnb') ?>"><font size="2"><span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span>&nbsp;&nbsp;Notices</font></a></li>
-                        <li><a href="<?php echo site_url('feat/events') ?>"><font size="2"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>&nbsp;&nbsp;Events</font></a></li>
-                        <li><a href="https://gbuonline.wordpress.com" target="_blank"><font size="2"><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>&nbsp;&nbsp;Reviews</font></a></li>
-                        <li><a href="<?php echo site_url('blogs/recent_blogs') ?>"><font size="2"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span>&nbsp;&nbsp;Blogs</font></a></li>
-
-                    </ul>
-                </li>
-
-                <!--
-                <li>
-                    <a href="<?php echo site_url('feat/exams') ?>"><font size="2"><span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>&nbsp;Exams</font></a>
-                </li>-->
-
-                <?php
-                /*
-
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Placements</font><span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                  <li><a href="<?php echo base_url('resources/placements/p2015.pdf')?>">Placement 2015</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2014.pdf')?>">Placement 2014</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2013.pdf')?>">Placement 2013</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2012.pdf')?>">Placement 2012</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2011.pdf')?>">Placement 2011</a></li>
-                  <li><a href="<?php echo base_url('resources/placements/p2010.pdf')?>">Placement 2010</a></li>
-                  </ul>
-                  </li>-->
-                  <!--
-                  <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><font size="2">
-                  <span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;Downloads</font><span class="caret"></span></a>
-                  <ul class="dropdown-menu" role="menu">
-                  <li align="center"><b><center>Mobile Apps</center></b></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Time Table (Android)</a></li>
-                  <li><a href="#">Time Table (Windows)</a></li>
-                  <li><a href="#">Abhivyanjana</a></li>
-                  <li><a href="#">Attendance</a></li>
-                  <li class="divider"></li>
-                  <li align="center"><b><center>Utility Softwares</center></b></li>
-                  <li class="divider"></li>
-                  <li><a href="#">Proxifier</a></li>
-                  <li><a href="#">IDM</a></li>
-                  <li><a href="#">C-Cleaner</a></li>
-                  <li><a href="#">Ultra-surf</a></li>
-
-                  </ul>
-                  </li>
-                 */
-                ?>
-
+				
+                
 
             </ul>
             <ul class="nav navbar-nav  pull-right">
 
-                <li>
-                    <form action="<?= site_url('feat/search_results/') ?>" method="get">
-                        <div class="search" style="padding-top:10px; margin-bottom:-10px;">
-                            <input type="text" class="form-control input-sm" name="q" maxlength="64" placeholder="Search" />
-                            <button type="submit" class="bt btn btn-primary btn-sm"><span class="glyphicon glyphicon-search" aria-hidden="true"></span>&nbsp;Search</button>
-                        </div>
-                    </form>
-
-                </li>
+                
 
                 <li>
                     <?php
@@ -196,43 +99,6 @@
 </div><!--row1 for header-->
 
 <style>
-    #search {
-        float: right;
-        margin-top: 9px;
-        width: 250px;
-    }
-
-    .search {
-        padding: 5px 0;
-        margin-right: 10px;
-        width: 230px;
-        height: 30px;
-        position: relative;
-        left: 10px;
-        float: left;
-        line-height: 22px;
-    }
-
-    .search input {
-        position: absolute;
-        width: 0px;
-        float: Left;
-        margin-left: 210px;
-        -webkit-transition: all 0.4s ease-in-out;
-        -moz-transition: all 0.4s ease-in-out;
-        -o-transition: all 0.4s ease-in-out;
-        transition: all 0.4s ease-in-out;
-        height: 30px;
-        line-height: 18px;
-        padding: 0 2px 0 2px;
-        border-radius:1px;
-    }
-
-    .search:hover input, .search input:focus {
-        width: 200px;
-        margin-left: 0px;
-    }
-
 
     .bt {
         height: 30px;

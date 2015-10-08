@@ -6,6 +6,12 @@
 		<br/>
 		<!--your content-->
 	<div>
+		<br/><br/><br/>
+		<center><h1>Gautam Buddha University</h1></center>
+		<br/><br/><br/>
+	</div>
+		
+	<div>
 		<center>
 		<h2><span class="label label-danger">Alumni Community</span></h2>
 		<br><br>

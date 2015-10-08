@@ -2,9 +2,9 @@
     <head>
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="keywords" content="Gautam Buddha University,gbu,gbuonline,gbu online,abhivyanjana,ecokart,shouryotsav">
+        <meta name="keywords" content="Gautam Buddha University,gbu,gbuonline,gbu online,abhivyanjana,alumni,gbualumni">
         <link href='https://fonts.googleapis.com/css?family=Roboto|Oswald|Josefin+Sans' rel='stylesheet' type='text/css'>
-        <title><?php echo $title; ?></title>
+        <title>GBU Alumni</title>
         <link rel="shortcut icon" href="<?php echo $this->cdn->res_url('resources/images/favicon.ico') ?>">
         <script src="<?php echo $this->cdn->res_url('resources/jquery-2.1.4.min.js') ?>"></script>
         <link rel="stylesheet" href="<?php echo $this->cdn->res_url('resources/css/bootstrap.min.css') ?>">
@@ -144,11 +144,21 @@
         <!-- End Google Analytics -->
 
     </head>
-    <body background="<?php echo $this->cdn->res_url('resources/images/symphony.png') ?>" style="background-attachment: fixed; background-repeat: repeat;">
+    <body background="" style="margin-top: 10px; background-attachment: fixed; background-repeat: repeat;">
         <div class="se-pre-con"></div>
         <div class="container-fluid footer-problem"><!--this div ends in footer.php-->
 
+<style>
+body{
 
+  background: -webkit-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* Chrome 10+, Saf5.1+ */
+  background:    -moz-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* FF3.6+ */
+  background:     -ms-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* IE10 */
+  background:      -o-linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* Opera 11.10+ */
+  background:         linear-gradient(90deg, #FFEEEE 10%, #DDEFBB 90%); /* W3C */
+
+   }    
+</style>
 
 
 
