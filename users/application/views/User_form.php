@@ -29,12 +29,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         echo 'Please create account first. Then go to profile picture and update it from there<br /><br />';
     }
     ?>
-
-
     <label>Username (unique)</label>
     <input type = "text" class = "form-control" name = "username" value = "<?php echo set_value('username', @$username); ?>"/>
     <br />
-
     <label>Full Name</label>
     <input type = "text" class = "form-control" name = "full_name" value = "<?php echo set_value('full_name', @$full_name); ?>"/>
     <br />
@@ -49,6 +46,51 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
     <label>Roll Number (Optional)</label>
     <input type = "text" class = "form-control" name = "roll_number" value = "<?php echo set_value('roll_number', @$roll_number); ?>"/>
+
+    <br />
+    <p>
+        <label for="dob">Date Of birth <span class="required">*</span></label>
+        <?php echo form_error('dob'); ?>
+        <br /><input class="form-control" id="dob" type="text" name="dob" maxlength="100" value="<?php echo set_value('dob', @$dob); ?>"  />
+    </p>
+    <br />
+    <p>
+        <label for="address">Address <span class="required">*</span></label>
+        <?php echo form_error('address'); ?>
+        <br /><input class="form-control" id="address" type="text" name="address"  value="<?php echo set_value('address', @$address); ?>"  />
+    </p>
+    <br />
+    <p>
+        <label for="gender">Gender <span class="required">*</span></label>
+        <?php echo form_error('gender'); ?>
+
+        <?php
+        $options = array(
+            '' => 'Please Select',
+            'male' => 'Male',
+            'female' => 'Female',
+            'other' => 'I prefer not to disclose'
+        );
+        ?>
+
+        <br /><?php echo form_dropdown('gender', $options, set_value('gender', @$gender), 'class="selectpicker"') ?>
+    </p>                                             
+    <br />
+    <p>
+        <label for="marital_status">Marital status <span class="required">*</span></label>
+        <?php echo form_error('marital_status'); ?>
+
+        <?php
+        $options = array(
+            '' => 'Please Select',
+            'married' => 'Married',
+            'single' => 'Single'
+        );
+        ?>
+
+        <br /><?php echo form_dropdown('marital_status', $options, set_value('marital_status', @$marital_status), 'class="selectpicker"') ?>
+    </p>                                             
+
 
     <br /><?php
     if (!isset($user_id) || $user_id != $this->session->userdata('user_id')) {   // new user, or not current user

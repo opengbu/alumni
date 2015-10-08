@@ -5,7 +5,7 @@
  */
 ?>
 
-<div class="container-fluid">
+<div class="container-fluid col-sm-10">
 
     <h3>Add/Update Work Information</h3>
     <?php
@@ -36,14 +36,11 @@
         <br /><input class="form-control" id="end_year" type="text" name="end_year" maxlength="15" value="<?php echo set_value('end_year', @$end_year); ?>"  />
     </p>
 
-
     <p>
         <label for="designation">Designation <span class="required">*</span></label>
         <?php echo form_error('designation'); ?>
         <br /><input class="form-control" id="designation" type="text" name="designation" maxlength="100" value="<?php echo set_value('designation', @$designation); ?>"  />
     </p>
-
-
     <p>
         <?php echo form_submit('submit', 'Submit'); ?>
     </p>

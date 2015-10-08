@@ -74,7 +74,7 @@ class User_controls extends CI_Controller {
         $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');
         $this->form_validation->set_rules('password', 'Password', 'callback_check_pass');
         $this->form_validation->set_rules('profile_picure', 'profile_picure', 'callback_check_image_and_upload');
-
+       
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->view('common/header');
@@ -99,7 +99,6 @@ class User_controls extends CI_Controller {
             $extra_log_message = NULL;
 
             $form_data = array(
-                'username' => set_value('username'),
                 'email' => set_value('email'),
                 'type' => set_value('type'),
                 'password' => set_value('password'),
@@ -109,6 +108,10 @@ class User_controls extends CI_Controller {
                 'confirmation_link' => $confirmation_link,
                 'profile_picture' => $this->image_path,
                 'active' => 1, // auto activate
+                'dob' => set_value('dob'),
+                'address' => set_value('address'),
+                'gender' => set_value('gender'),
+                'marital_status' => set_value('marital_status')
             );
 
             if (strlen($this->image_path) == 0)
