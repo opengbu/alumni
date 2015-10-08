@@ -59,16 +59,9 @@ class Alumni_profile extends CI_Controller {
 
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
-            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-            $data['heading'] = ' GBU Alumni ';
-            $data['message'] = 'Let the world know you.....';
-			$data['x'] = '6';
-            $this->load->view('pages/common/link', $data);
-            $this->load->view('pages/common/header');
-            $this->load->view('pages/common/page-heading', $data);
-			$this->load->view('pages/alumni/nav', $data);
-            $this->load->view('pages/alumni/create_profile');
-            $this->load->view('pages/common/footer');
+            $this->load->view('common/header');
+            $this->load->view('alumni/create_profile');
+            $this->load->view('common/footer');
         } else {
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
@@ -97,22 +90,14 @@ class Alumni_profile extends CI_Controller {
         $this->basic_form_1();
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
-            set_value('dob', '333');
-            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-            $data['heading'] = ' GBU Alumni ';
-            $data['message'] = 'Let the world know you.....';
-			$data['x'] = '6';
-            $this->load->view('pages/common/link', $data);
-            $this->load->view('pages/common/header');
-            $this->load->view('pages/common/page-heading', $data);
-			$this->load->view('pages/alumni/nav', $data);
+            $this->load->view('common/header');
 
             $query = $this->db->get_where('alumni_basic', array('user_id' => $this->session->userdata('user_id')));
 
             $form_data = $query->row();
 
-            $this->load->view('pages/alumni/create_profile', $form_data);
-            $this->load->view('pages/common/footer');
+            $this->load->view('alumni/create_profile', $form_data);
+            $this->load->view('common/footer');
         } else {
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
@@ -129,17 +114,10 @@ class Alumni_profile extends CI_Controller {
     }
 
     function view_work_info() {
-        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' GBU Alumni ';
-        $data['message'] = 'Let the world know you.....';
-		$data['x'] = '6';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
-		$this->load->view('pages/alumni/nav', $data);
+        $this->load->view('common/header');
         $u_info['user_id'] = $this->session->userdata('user_id');
-        $this->load->view('pages/alumni/work_info', $u_info);
-        $this->load->view('pages/common/footer');
+        $this->load->view('alumni/work_info', $u_info);
+        $this->load->view('common/footer');
     }
 
     function add_work_info() {
@@ -149,16 +127,9 @@ class Alumni_profile extends CI_Controller {
         $this->basic_form_2();
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
-            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-            $data['heading'] = ' GBU Alumni ';
-            $data['message'] = 'Let the world know you.....';
-			$data['x'] = '6';
-            $this->load->view('pages/common/link', $data);
-            $this->load->view('pages/common/header');
-            $this->load->view('pages/common/page-heading', $data);
-			$this->load->view('pages/alumni/nav', $data);
-            $this->load->view('pages/alumni/work_info_form');
-            $this->load->view('pages/common/footer');
+            $this->load->view('common/header');
+            $this->load->view('alumni/work_info_form');
+            $this->load->view('common/footer');
         } else {
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
@@ -182,21 +153,14 @@ class Alumni_profile extends CI_Controller {
         $this->basic_form_2();
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
-            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-            $data['heading'] = ' GBU Alumni ';
-            $data['message'] = 'Let the world know you.....';
-			$data['x'] = '6';
-            $this->load->view('pages/common/link', $data);
-            $this->load->view('pages/common/header');
-            $this->load->view('pages/common/page-heading', $data);
-			$this->load->view('pages/alumni/nav', $data);
+            $this->load->view('common/header');
 
             $query = $this->db->get_where('work_details', array('id' => $this->input->get('work_id')));
 
             $form_data = $query->row();
 
-            $this->load->view('pages/alumni/work_info_form', $form_data);
-            $this->load->view('pages/common/footer');
+            $this->load->view('alumni/work_info_form', $form_data);
+            $this->load->view('common/footer');
         } else {
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
@@ -223,17 +187,10 @@ class Alumni_profile extends CI_Controller {
     }
 
     function view_education_info() {
-        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' GBU Alumni ';
-        $data['message'] = 'Let the world know you.....';
-		$data['x'] = '6';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
-		$this->load->view('pages/alumni/nav', $data);
+        $this->load->view('common/header');
         $u_info['user_id'] = $this->session->userdata('user_id');
-        $this->load->view('pages/alumni/edu_info', $u_info);
-        $this->load->view('pages/common/footer');
+        $this->load->view('alumni/edu_info', $u_info);
+        $this->load->view('common/footer');
     }
 
     function add_education_info() {
@@ -244,16 +201,9 @@ class Alumni_profile extends CI_Controller {
 
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
-            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-            $data['heading'] = ' GBU Alumni ';
-            $data['message'] = 'Let the world know you.....';
-			$data['x'] = '6';
-            $this->load->view('pages/common/link', $data);
-            $this->load->view('pages/common/header');
-            $this->load->view('pages/common/page-heading', $data);
-			$this->load->view('pages/alumni/nav', $data);
-            $this->load->view('pages/alumni/edu_info_form');
-            $this->load->view('pages/common/footer');
+            $this->load->view('common/header');
+            $this->load->view('alumni/edu_info_form');
+            $this->load->view('common/footer');
         } else {
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
@@ -277,20 +227,12 @@ class Alumni_profile extends CI_Controller {
 
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
-            $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-            $data['heading'] = ' GBU Alumni ';
-            $data['message'] = 'Let the world know you.....';
-			$data['x'] = '6';
-            $this->load->view('pages/common/link', $data);
-            $this->load->view('pages/common/header');
-            $this->load->view('pages/common/page-heading', $data);
-			$this->load->view('pages/alumni/nav', $data);
-
+            $this->load->view('common/header');
             $query = $this->db->get_where('edu_info', array('id' => $this->input->get('edu_id')));
             $form_data = $query->row();
 
-            $this->load->view('pages/alumni/edu_info_form', $form_data);
-            $this->load->view('pages/common/footer');
+            $this->load->view('alumni/edu_info_form', $form_data);
+            $this->load->view('common/footer');
         } else {
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
@@ -318,32 +260,18 @@ class Alumni_profile extends CI_Controller {
         if ($this->session->userdata('loggedin') != 1)
             redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
-        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' GBU Alumni ';
-        $data['message'] = 'Let the world know you.....';
-		$data['x'] = '6';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
-		$this->load->view('pages/alumni/nav', $data);
-        $this->load->view('pages/alumni/all_alumni');
-        $this->load->view('pages/common/footer');
+        $this->load->view('common/header');
+        $this->load->view('alumni/all_alumni');
+        $this->load->view('common/footer');
     }
 
     function load_profile() {
         if ($this->session->userdata('loggedin') != 1)
             redirect('/users?redirect=' . base_url('alumni_profile'));
 
-        $data['title'] = 'Alumni &nbsp;|&nbsp;  GBU Online';
-        $data['heading'] = ' GBU Alumni ';
-        $data['message'] = 'Let the world know you.....';
-		$data['x'] = '6';
-        $this->load->view('pages/common/link', $data);
-        $this->load->view('pages/common/header');
-        $this->load->view('pages/common/page-heading', $data);
-		$this->load->view('pages/alumni/nav', $data);
-        $this->load->view('pages/alumni/load_profile');
-        $this->load->view('pages/common/footer');
+        $this->load->view('common/header');
+        $this->load->view('alumni/load_profile');
+        $this->load->view('common/footer');
     }
 
 }

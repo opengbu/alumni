@@ -121,8 +121,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li> 
-                            <a href="<?= base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->userdata('full_name') ?>!</a>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <i class="icon-th-large"></i> Welcome <?= $this->session->userdata('full_name') ?>!
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">My Profile</a></li>
+                                <li><a href="<?= base_url() . 'Alumni_profile/Create' ?>">My basic Alumni Info</a></li>
+
+                            </ul>
                         </li>
                         <li>
                             <a href="<?= base_url() . 'logout' ?>">Log out</a>
