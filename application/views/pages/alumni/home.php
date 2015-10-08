@@ -59,7 +59,7 @@
 						<div class="panel-body">
 							<div class="row">
 								<div class="col-md-5">
-									<img id="tn" src="<?php echo base_url().'resources/images/'.$user_data->profile_picture ?>" height="170" width="130"/>
+									<img id="tn" src="<?php echo base_url().$user_data->profile_picture ?>" height="170" width="130"/>
 								</div>
 								<div class="col-md-7" id="spn">
 									Name :  <?=$user_data->full_name?><br/>
