@@ -239,7 +239,7 @@ hr {
 		
 		
 		
-	$q=$this->db->query("select *,extract(day from event_date) as day,extract(month from event_date) as month from alumni_events");
+	$q=$this->db->query("select *,extract(day from event_date) as day,extract(month from event_date) as month from alumni_events ORDER BY event_date DESC");
 	
 	
 	
@@ -287,7 +287,7 @@ $monthName = $dateObj->format('F'); // March
     </div>
     <div class="author col-xs-2 col-sm-3">
         <div class="profile-image">
-            <img src="http://api.randomuser.me/portraits/med/men/71.jpg"/>
+            <img src="<?=base_url($row->director_image);?>"/>
         </div>
         <div class="profile hidden-xs">
             <strong style="padding-left:20px"><?= $row->director_name;?></strong>

@@ -1,3 +1,9 @@
+<style>
+hr.style-seven 
+{ height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; }
+ hr.style-seven:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; }
+</style>
+
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
     <div class="row">
 	
@@ -21,8 +27,8 @@
 		</p>
 		<br/>
 		<a type="button" class="btn btn-success" href="<?php echo site_url('users/register')?>" >Register Here</a>
-		<br/><br/>
-		<hr/><br/>
+		<br/><br/><br/>
+		<hr class="style-seven"/>
 		</center>
 	</div>
 	
@@ -79,13 +85,13 @@
 				?>		
 				
 			</div><br/>
-			<hr/>
+			<hr class="style-seven"/>
 		</div>
 		
 		
 		
 		<div>
-		<center><br/>
+		<center>
 		<h2><span class="label label-danger">Follow This On</span></h2>
 		<br/><br/>
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">

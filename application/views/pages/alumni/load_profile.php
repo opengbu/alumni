@@ -211,9 +211,19 @@ $basic_info = $basic_info_q->row();
                     </li>
                 </b>
                 <?php
+				$county=0;
                 foreach ($select_rows->result() as $row) {
-                    ?>
-                    <li class="list-group-item">
+                    $county++;
+					if($county%2==0)
+						{	
+							$color='default';
+						}
+					else
+						{	
+							$color='info';
+						}
+					?>
+                    <li class="list-group-item list-group-item-<?=$color?>">
                         <div class="row">
                             <div class="col-sm-6">
                                 <?= $row->course_name ?>

@@ -54,9 +54,19 @@
                 </li>
             </b>
             <?php
+			$count=0;
             foreach ($select_rows->result() as $row) {
-                ?>
-                <li class="list-group-item">
+                $count++;
+				if($count%2==0)
+				{
+					$color='default';
+				}
+				else
+				{
+					$color='info';
+				}
+				?>
+                <li class="list-group-item list-group-item-<?=$color?>">
                     <div class="row">
                         <div class="col-sm-4">
                             <?= $row->full_name ?>
