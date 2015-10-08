@@ -18,8 +18,9 @@ $basic_info = $basic_info_q->row();
         margin: 0px;
     }
 </style>
-<div class="container">
-
+<div class="container"style="padding-top:50px; padding-bottom:50px;">
+	<h3><span class="label label-default">Basic Information</span></h3>
+	
     <?php
     if ($basic_info_q->num_rows() == 0) {
         echo "<b>The requested profile does not exist</b>";
@@ -27,8 +28,8 @@ $basic_info = $basic_info_q->row();
         return;
     }
     ?>
-    <ul class="nav nav-list col-sm-12" style="padding-bottom: 30px;padding-top: 30px;">
-        <li class="list-group-item">
+    <ul class="nav nav-list col-sm-12" style="padding-bottom: 30px;padding-top: 40px;">
+        <li class="list-group-item list-group-item-warning">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Name:</label>
@@ -39,7 +40,7 @@ $basic_info = $basic_info_q->row();
             </div>
         </li>
 
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-info">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Date Of Birth:</label>
@@ -50,7 +51,7 @@ $basic_info = $basic_info_q->row();
             </div>
         </li>
 
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-warning">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Phone Number:</label>
@@ -62,7 +63,7 @@ $basic_info = $basic_info_q->row();
         </li>
 
 
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-info">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Sex:</label>
@@ -74,7 +75,7 @@ $basic_info = $basic_info_q->row();
         </li>
 
 
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-warning">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Address:</label>
@@ -85,7 +86,7 @@ $basic_info = $basic_info_q->row();
             </div>
         </li>
 
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-info">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Marital Status:</label>
@@ -97,7 +98,7 @@ $basic_info = $basic_info_q->row();
         </li>
 
 
-        <li class="list-group-item">
+        <li class="list-group-item list-group-item-warning">
             <div class="row">
                 <div class="col-sm-4">
                     <label>Email</label>
@@ -106,18 +107,20 @@ $basic_info = $basic_info_q->row();
                     <?= $basic_info->email ?>
                 </div>
             </div>
-        </li>    
+        </li>
+<br/><br/>		
     </ul>     
-    <br />
+    <br/>
     <div style="padding-bottom: 30px;padding-top: 30px;">
 
-        <h3>Work Information</h3>
-        <?php
+        <h3><span class="label label-default">Work Information</span></h3>
+        <br/><br/>
+		<?php
         $select_rows = $this->db->query("select id,company_name,start_year,end_year,designation,location from work_details where work_details.user_id = '$user_id' ");
 
         if ($select_rows->num_rows() > 0) {
             ?>
-            <ul class="nav nav-list col-sm-12" id = "record_list"> 
+            <ul class="list-group col-sm-12" id = "record_list"> 
                 <b>
                     <li class="list-group-item">
                         <div class="row">
@@ -137,9 +140,19 @@ $basic_info = $basic_info_q->row();
                     </li>
                 </b>
                 <?php
+				$count=0;
                 foreach ($select_rows->result() as $row) {
-                    ?>
-                    <li class="list-group-item">
+                    $count++;
+					if($count%2==0)
+						{	
+							$color='default';
+						}
+					else
+						{	
+							$color='info';
+						}
+					?>
+                    <li class="list-group-item list-group-item-<?=$color?>">
                         <div class="row">
                             <div class="col-sm-2">
                                 <?= $row->company_name ?>
@@ -165,13 +178,15 @@ $basic_info = $basic_info_q->row();
             echo "<b>Nothing to Display, no work data found</b>";
         }
         ?>
+		<br/><br/><br/><br/>
     </div>
     <div style="padding-bottom: 30px;padding-top: 30px;">
 
     </div>
     <div style="padding-bottom: 30px;padding-top: 30px;">
 
-        <h3>Education Information</h3>
+        <h3><span class="label label-default">Education Information</span></h3>
+		<br/><br/>
 
         <?php
         $select_rows = $this->db->query("select id,start_year,passout_year,course_name from edu_info where user_id = '$user_id' ");

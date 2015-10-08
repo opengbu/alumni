@@ -19,7 +19,7 @@
 			
             <div class="col-md-12 text-center">
                 <br/>
-                    <b><p style = "color:white;">&copy; OpenGBU, Inc.</p></b>
+                    <b><p style = "color:white;"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> OpenGBU, Inc.</p></b>
               <br/>
        </div>
         
