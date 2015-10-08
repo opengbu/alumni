@@ -7,8 +7,8 @@
 		<!--your content-->
 	<div>
 		<br/><br/><br/>
-		<center><h1>Gautam Buddha University</h1></center>
-		<br/><br/><br/>
+		<center><p style=" font-size: 350%; font-family: 'Merriweather Sans', sans-serif;">Gautam Buddha University</p></center>
+		<br/><br/>
 	</div>
 		
 	<div>

@@ -22,22 +22,22 @@
             <ul class="nav navbar-nav" style="margin-left: 250px;">
 
                 <li class="dropdown">
-                    <a href=""  target="_blank">
+                    <a href="<?=site_url('alumni/alumni_list/distinguished')?>">
                         <font size="2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Distinguished Alumni</font>
                     </a>
                 </li>
 				<li class="dropdown" style="margin-left: 50px;">
-                    <a href=""  target="_blank">
+                    <a href="<?=site_url('alumni/alumni_list/all')?>">
                         <font size="2"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Alumni List</font>
                     </a>
                 </li>
 				<li class="dropdown" style="margin-left: 50px;">
-                    <a href="<?=site_url('alumni/events')?>"  target="_blank">
+                    <a href="<?=site_url('alumni/events')?>">
                         <font size="2"> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Events</font>
                     </a>
                 </li>
 				<li class="dropdown" style="margin-left: 50px;">
-                    <a href=""<?=site_url('alumni/gallery')?>""  target="_blank">
+                    <a href="<?=site_url('alumni/gallery')?>">
                         <font size="2"> <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Gallery</font>
                     </a>
                 </li>
