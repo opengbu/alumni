@@ -19,7 +19,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <li class="list-group-item">
             <div class="row">
                 <div class="col-sm-12">
-                    <b>Relative path (can be used in events,notices,exams etc)</b>
+                    <b>Relative path</b>
                 </div>
                 <div class="col-sm-4">
 
@@ -27,7 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </li>
         <?php
-        $storage = ['events', 'notices', 'exams'];
+        $storage = ['gallery'];
         foreach ($storage as $sub_path) {
             $names = get_filenames("../user_uploads/" . $sub_path);
             if (is_array($names) || is_object($names)) {

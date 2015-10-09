@@ -13,7 +13,7 @@ class Cdn_model extends CI_Model {
 
     function __construct() {
         parent::__construct();
-        if (CDN_MODE == 'OFFLINE') {
+        if (CDN_MODE == 'ONLINE') {
             $this->res_url = 'http://cdn.gbuonline.in/users/';
             $this->base_url = 'http://cdn.gbuonline.in/';
         } else {

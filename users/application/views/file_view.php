@@ -30,14 +30,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         Browse<input name="userfile" type="file"/>
     </span>
     <br /><br />
-    <label>Directory</label><br />
+    <!--<label>Directory</label><br />-->
     <?php
-    $options['user_uploads'] = 'Events';
+    $options['events'] = 'Events';
     $options['notices'] = 'Notices';
     $options['exams'] = 'Exams';
-    echo form_dropdown('directory', $options, NULL, 'class="selectpicker"');
+    //echo form_dropdown('directory', $options, NULL, 'class="selectpicker"');
     ?>
-    <br /><br /><br />
+    
+    <input type="hidden" name="directory" value="gallery" />
+    
+    <br />
     <?php echo "<input type='submit' name='submit' value='upload' class='btn btn-primary' /> "; ?>
     <?php echo $error; ?>
 

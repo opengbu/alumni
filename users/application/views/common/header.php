@@ -121,17 +121,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </ul>
 
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                <i class="icon-th-large"></i> Welcome <?= $this->session->userdata('full_name') ?>!
-                                <b class="caret"></b>
-                            </a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">My Profile</a></li>
-                                <li><a href="<?= base_url() . 'Alumni_profile/Create' ?>">My basic Alumni Info</a></li>
+                        <li><a href="<?= base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">Welcome <?= $this->session->full_name ?> !</a></li>
 
-                            </ul>
-                        </li>
                         <li>
                             <a href="<?= base_url() . 'logout' ?>">Log out</a>
                         </li>
@@ -152,8 +143,12 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     <div class="collapse navbar-collapse" id="bs-sidebar-navbar-collapse-1">
                         <ul class="nav navbar-nav">
 
+                            <li><a href="<?php echo base_url() . 'User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">My Information<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li><a href="<?php echo base_url() . 'Alumni_profile/view_work_info' ?>">My Work Experience<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
                             <li><a href="<?php echo base_url() . 'Alumni_profile/view_education_info' ?>">My Education Details<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li><a href="<?php echo base_url() . 'Alumni_events/' ?>">Alumni Events<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-th-list fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'media_upload/do_upload' ?>">Upload Media <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-upload fa-2x"></i></a></li>
+                            <li ><a href="<?php echo base_url() . 'manage_uploads' ?>">Manage Media <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-picture-o fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'User_controls' ?>">Users <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-users fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'User_controls/CreateOrUpdate' ?>">New user <i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
                             <li ><a href="<?php echo base_url() . 'logs' ?>">Logs<i style="font-size:16px;" class="pull-right hidden-xs showopacity fa fa-user-plus fa-2x"></i></a></li>
