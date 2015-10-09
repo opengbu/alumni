@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta charset="UTF-8">
         <title>
-            GBU Online
+            GBU Alumni
         </title>
         <link rel="stylesheet" href="<?php echo base_url() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
 

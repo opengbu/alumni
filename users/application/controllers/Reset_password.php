@@ -85,7 +85,7 @@ class Reset_password extends CI_Controller {
 <p class=MsoNormal style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
 normal"><span lang=EN-IN style="mso-ansi-language:EN-IN">Dear ' . $full_name . ',
 <br /><br />
-You have requested for a password chage in gbuonline.in<br /><br />
+You have requested for a password chage in '.$host.'<br /><br />
 Your One time Password reset link is <br />' .
                 base_url() . 'Reset_password/confirm?username=' . $username . '&conf=' . $confirmation_link .
                 '<br /> <br />
@@ -93,7 +93,7 @@ Thank you!
 <br /><br />
 With Regards,
 <br />
-Gbu Online <br><br />
+Gbu Alumni <br><br />
 
 </span></span><o:p></o:p></p>
 </div>
@@ -102,13 +102,13 @@ Gbu Online <br><br />
 
 </html>
 ';
-        $headers = 'From: Accounts gbuonline.in <' . $from_email . '>' . "\r\n" .
+        $headers = 'From: Accounts '.$host.' <' . $from_email . '>' . "\r\n" .
                 'Reply-To: ' . $from_email . "\r\n" .
                 'X-Mailer: PHP/' . phpversion() . "\r\n" .
                 'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
                 'MIME-Version: 1.0' . "\r\n\r\n";
 
-        mail($email, "GBU Online | Password Reset", $message, $headers);
+        mail($email, "GBU Alumni | Password Reset", $message, $headers);
     }
 
     function confirm() {

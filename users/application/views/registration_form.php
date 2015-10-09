@@ -9,7 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <head>
         <meta charset="UTF-8">
         <title>
-            Sign Up GBU Online
+            Sign Up GBU Alumni
         </title>
         <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
         <link rel="shortcut icon" href="<?php echo $this->cdn->base() . '/resources/images/favicon.ico' ?>">
@@ -29,16 +29,28 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 background: rgba(255, 255, 255, 0.8);
                 box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
             }
+            .navbar-brand
+            {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                text-align: center;
+                margin: auto;
+            }
         </style>
 
     </head>
     <body>
         <div class="container">
             <div class="row centered-form">
+
+                <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
+                    <a class="navbar-brand" href="<?php echo base_url() ?>"><font size="6" color="white">Welcome To GBU Alumni</font></a> 
+                </nav>
                 <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <h3 class="panel-title"><div class="text-center"> Sign up for GBU Online</div></h3>
+                            <h3 class="panel-title"><div class="text-center"> Sign up for GBU Alumni</div></h3>
                         </div>
                         <div class="panel-body">
                             <?php

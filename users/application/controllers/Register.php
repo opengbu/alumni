@@ -112,7 +112,7 @@ class Register extends CI_Controller {
 <p class=MsoNormal style="margin-bottom:0in;margin-bottom:.0001pt;line-height:
 normal"><span lang=EN-IN style="mso-ansi-language:EN-IN">Dear ' . $full_name . ',
 <br /><br />
-Thank you for registering to gbuonline.in .<br /><br />
+Thank you for registering to '. $host .' .<br /><br />
 Please acivate your account by going to the following link <br />' .
                 base_url() . 'register/confirm?username=' . $username . '&conf=' . $confirmation_link .
                 '<br /> <br />
@@ -120,7 +120,7 @@ Thank you!
 <br /><br />
 With Regards,
 <br />
-gbuonline.in<br><br />
+'. $host.'<br><br />
 
 ****************************************************************<br>
 This is a system generated mail. Please do not reply to this email.<br>
@@ -133,13 +133,13 @@ This is a system generated mail. Please do not reply to this email.<br>
 
 </html>
 ';
-        $headers = 'From: Accounts gbuonline.in <' . $from_email . '>' . "\r\n" .
+        $headers = 'From: Accounts '.$host.' <' . $from_email . '>' . "\r\n" .
                 'Reply-To: ' . $from_email . "\r\n" .
                 'X-Mailer: PHP/' . phpversion() . "\r\n" .
                 'Content-Type: text/html; charset=ISO-8859-1' . "\r\n" .
                 'MIME-Version: 1.0' . "\r\n\r\n";
 
-        mail($email, "Welcome To GBU Online", $message, $headers);
+        mail($email, "Welcome To GBU Alumni", $message, $headers);
     }
 
     function check_email() { // Check if user already exists

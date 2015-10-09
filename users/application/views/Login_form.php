@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 ?>
 <html>
     <head>
-        <title>Login to GBU Online</title>
+        <title>Login to GBU Alumni</title>
         <link rel="shortcut icon" href="<?php echo $this->cdn->base() . '/resources/images/favicon.ico' ?>">
         <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/bootstrap.min.css' ?>">
         <link rel="stylesheet" href="<?php echo $this->cdn->users() . 'application/views/common/' . 'css/varun.css' ?>">
@@ -25,18 +25,30 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 background-image: url('<?php echo $this->cdn->users() . 'application/views/common/' . 'color-splash.jpg' ?>');
 
             }
+
+            .navbar-brand
+            {
+                position: absolute;
+                width: 100%;
+                left: 0;
+                text-align: center;
+                margin: auto;
+            }
         </style>
     </head>
     <body>
         <div id="fullscreen_bg" class="fullscreen_bg"/>
         <div class="container">
-
+            <br />
+            <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
+                <a class="navbar-brand" href="<?php echo base_url() ?>"><font size="6" color="white">Welcome To GBU Alumni</font></a> 
+            </nav>
             <div class="row centered-form">
                 <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
                     <div class="panel panel-default">
 
                         <div class="panel-heading">
-                            <h3 class="panel-title"><div class="text-center"> Sign in to GBU Online</div></h3>
+                            <h3 class="panel-title"><div class="text-center"> Sign in to GBU Alumni</div></h3>
                         </div>
                         <div class="panel-body">
                             <center>

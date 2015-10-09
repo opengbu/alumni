@@ -22,32 +22,32 @@
             <ul class="nav navbar-nav" style="margin-left: 250px;">
 
                 <li class="dropdown">
-                    <a href="<?=site_url('alumni/alumni_list/distinguished')?>">
+                    <a href="<?= site_url('alumni/alumni_list/distinguished') ?>">
                         <font size="2"> <span class="glyphicon glyphicon-star" aria-hidden="true"></span> Distinguished Alumni</font>
                     </a>
                 </li>
-				<li class="dropdown" style="margin-left: 50px;">
-                    <a href="<?=site_url('alumni/alumni_list/all')?>">
+                <li class="dropdown" style="margin-left: 50px;">
+                    <a href="<?= site_url('alumni/alumni_list/all') ?>">
                         <font size="2"> <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span> Alumni List</font>
                     </a>
                 </li>
-				<li class="dropdown" style="margin-left: 50px;">
-                    <a href="<?=site_url('alumni/events')?>">
+                <li class="dropdown" style="margin-left: 50px;">
+                    <a href="<?= site_url('alumni/events') ?>">
                         <font size="2"> <span class="glyphicon glyphicon-time" aria-hidden="true"></span> Events</font>
                     </a>
                 </li>
-				<li class="dropdown" style="margin-left: 50px;">
-                    <a href="<?=site_url('alumni/gallery')?>">
+                <li class="dropdown" style="margin-left: 50px;">
+                    <a href="<?= site_url('alumni/gallery') ?>">
                         <font size="2"> <span class="glyphicon glyphicon-camera" aria-hidden="true"></span> Gallery</font>
                     </a>
                 </li>
-				
-                
+
+
 
             </ul>
             <ul class="nav navbar-nav  pull-right">
 
-                
+
 
                 <li>
                     <?php
@@ -64,29 +64,13 @@
                             <b class="caret"></b>
                         </a>
                         <ul class="dropdown-menu">
-                            <li> 
-                                <a href="<?= base_url() . 'users/User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">Manage Profile</a>
-                            </li>
-                            <li><a href="<?= base_url() . 'users/events/CreateOrUpdate' ?>">New Event</a></li>
-                            <?php if ($this->session->userdata('level') >= 4) { ?>
-                                <li><a href="<?= base_url() . 'users/User_controls/CreateOrUpdate' ?>">New User</a></li>
-                                <?php
-                            }
-                            if ($this->session->userdata('level') >= 2) {
-                                ?>
+                            <li><a href="<?= base_url() . 'users/User_controls/CreateOrUpdate?user_id=' . $this->session->userdata('user_id') ?>">Manage Profile</a></li>
+                            <li><a href="<?= base_url() . 'users/Alumni_profile/view_work_info' ?>">My Work Experience</a></li>
+                            <li><a href="<?= base_url() . 'users/Alumni_profile/view_education_info' ?>">My Education Info.</a></li>
+                            <li><a href="<?= base_url() . 'users/Alumni_events/' ?>">Events</a></li>
+                            <li role="separator" class="divider"></li>
 
-                                <li><a href="<?= base_url() . 'users/schools/CreateOrUpdate' ?>">New School</a></li>
-                                <li><a href="<?= base_url() . 'users/clubs/CreateOrUpdate' ?>">New Club</a></li>
-                                <li><a href="<?= base_url() . 'users/notices/CreateOrUpdate' ?>">New Notice</a></li>
-                                <li><a href="<?= base_url() . 'users/ebooks/CreateOrUpdate' ?>">New Ebook</a></li>
-                                <li><a href="<?= base_url() . 'users/exams/CreateOrUpdate' ?>">New Exam</a></li>
-
-
-
-                            <?php } ?>
-                            <li>
-                                <a href="<?= base_url() . 'users/logout?redirect=' ?>">Log out</a>
-                            </li>
+                            <li><a href="<?= base_url() . 'users/logout?redirect=' ?>">Log out</a></li>
                         </ul>
                     </li>
                     <?php

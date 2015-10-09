@@ -74,7 +74,7 @@ class User_controls extends CI_Controller {
         $this->form_validation->set_rules('email', 'email', 'required|callback_check_email');
         $this->form_validation->set_rules('password', 'Password', 'callback_check_pass');
         $this->form_validation->set_rules('profile_picure', 'profile_picure', 'callback_check_image_and_upload');
-       
+
         if ($this->form_validation->run() == FALSE) {
 
             $this->load->view('common/header');
@@ -255,8 +255,21 @@ class User_controls extends CI_Controller {
                     $this->permissions->get_full_type($form_data['type']);
             $this->logger->insert($log_message, TRUE, TRUE);
         }
+        $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
+        redirect(base_url() . 'user_controls/view_all');
+    }
 
+    function set_distinguished() {
+        $this->secure_hard(2);
+        $form_data['distinguished'] = $this->input->post('distinguished');
 
+        $query = $this->db->get_where('users', array('user_id' => $this->input->get('user_id')));
+        $old_form_data = $query->row();
+        if ($form_data['distinguished'] != $old_form_data->distinguished) {
+            $log_message = ' Changed ' . $old_form_data->username . ' (' . $old_form_data->user_id . ')\'s status to ' .
+                    $form_data['distinguished'];
+            $this->logger->insert($log_message, TRUE, TRUE);
+        }
         $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
         redirect(base_url() . 'user_controls/view_all');
     }
