@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Oct 08, 2015 at 11:01 PM
+-- Generation Time: Oct 09, 2015 at 09:22 PM
 -- Server version: 10.0.21-MariaDB-log
 -- PHP Version: 5.6.14
 
@@ -42,8 +42,9 @@ CREATE TABLE `alumni_events` (
 --
 
 INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES
-('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', 1, 'http://api.randomuser.me/portraits/med/men/71.jpg'),
-('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', 2, 'http://api.randomuser.me/portraits/med/men/71.jpg');
+('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', 1, 'user_uploads/director_images/1.jpg'),
+('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', 2, 'user_uploads/director_images/2.jpg'),
+('0000-00-00', 'qq &#039; aaasa', 'qqqq', 'qqqq', 'qqqq', 'qq', 4, 'user_uploads/director_images/4.png');
 
 -- --------------------------------------------------------
 
@@ -56,15 +57,16 @@ CREATE TABLE `edu_info` (
   `user_id` int(11) NOT NULL,
   `start_year` varchar(100) NOT NULL,
   `passout_year` varchar(100) NOT NULL,
-  `course_name` varchar(100) NOT NULL
+  `course_name` varchar(100) NOT NULL,
+  `school_name` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `edu_info`
 --
 
-INSERT INTO `edu_info` (`id`, `user_id`, `start_year`, `passout_year`, `course_name`) VALUES
-(3, 2, '2323', '2323', '2323');
+INSERT INTO `edu_info` (`id`, `user_id`, `start_year`, `passout_year`, `course_name`, `school_name`) VALUES
+(4, 1, '3333', '333', '333', '');
 
 -- --------------------------------------------------------
 
@@ -185,7 +187,54 @@ INSERT INTO `logs` (`id`, `user_id`, `date`, `time`, `action`) VALUES
 (114, 1, '2015-10-09', '03:59:14', '::1 - Updated user - rajat (5) (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
 (115, 1, '2015-10-09', '03:59:21', '::1 - Updated user - rajat (5) (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
 (116, 1, '2015-10-09', '03:59:28', '::1 - Updated user - rajat (5) (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
-(117, 1, '2015-10-09', '04:30:10', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) ');
+(117, 1, '2015-10-09', '04:30:10', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(118, 1, '2015-10-09', '04:44:34', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(119, 5, '2015-10-09', '04:44:38', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(120, 5, '2015-10-09', '04:47:09', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(121, 1, '2015-10-09', '04:47:12', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(122, 1, '2015-10-09', '06:30:09', 'Created alumni event 2222'),
+(123, 1, '2015-10-09', '06:30:58', 'Created alumni event qq'),
+(124, 1, '2015-10-09', '06:32:27', 'Updated alumni event 2222 (3)'),
+(125, 1, '2015-10-09', '06:34:18', 'Updated alumni event 2222 (3)'),
+(126, 1, '2015-10-09', '06:34:49', 'Updated alumni event qq (4)'),
+(127, 1, '2015-10-09', '06:35:57', 'Updated alumni event qq (4)'),
+(128, 1, '2015-10-09', '06:37:20', 'Updated alumni event qq (4)'),
+(129, 1, '2015-10-09', '07:02:34', 'Updated alumni event qq &#039; aaasa (4)'),
+(130, 1, '2015-10-09', '07:11:49', 'Updated alumni event ALUMNI MEET (1)'),
+(131, 1, '2015-10-09', '07:12:28', 'Updated alumni event ALUMNI MEET (1)'),
+(132, 1, '2015-10-09', '07:12:41', 'Updated alumni event 2222 (3)'),
+(133, 1, '2015-10-09', '07:12:52', 'Updated alumni event DISTINGUISH ALUMNI AWARDS (2)'),
+(134, 1, '2015-10-09', '07:14:48', '::1 - deleted event 2222 (3) (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(135, 1, '2015-10-09', '07:27:59', 'Uploaded file /user_uploads/gallery/Screenshot_from_2015-09-12_22-08-46.png'),
+(136, 1, '2015-10-09', '07:28:35', 'Uploaded file /user_uploads/gallery/PSYCHO_PASS_Series_Shougo_Makishima_Character_weapon_boys_2560x1440.jpg'),
+(137, 1, '2015-10-09', '08:07:43', '::1 -  Changed rajat (5)''s role to Student (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(138, 1, '2015-10-09', '08:07:45', '::1 -  Changed rajat (5)''s role to Super Administrator (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(139, 1, '2015-10-09', '08:10:17', '::1 -  Changed rajat (5)''s status to 1 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(140, 1, '2015-10-09', '08:10:38', '::1 -  Changed rajat (5)''s status to 0 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(141, 1, '2015-10-09', '08:10:48', '::1 -  Changed varun (1)''s status to 1 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(142, 1, '2015-10-09', '08:12:14', '::1 -  Changed varun (1)''s status to 0 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(143, 1, '2015-10-09', '08:12:15', '::1 -  Changed varun (1)''s status to 1 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(144, 1, '2015-10-09', '08:12:18', '::1 -  Changed varun (1)''s status to 0 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(145, 1, '2015-10-09', '08:12:22', '::1 -  Changed varun (1)''s status to 1 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(146, 1, '2015-10-09', '08:12:28', '::1 -  Changed rajat (5)''s status to 1 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(147, 1, '2015-10-09', '08:13:04', '::1 -  Changed rajat (5)''s status to 0 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(148, 1, '2015-10-09', '08:13:15', '::1 -  Changed varun (1)''s status to 0 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(149, 1, '2015-10-09', '08:13:17', '::1 -  Changed rajat (5)''s status to 1 (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(150, 1, '2015-10-09', '08:35:12', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(151, 1, '2015-10-09', '08:36:43', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(152, 1, '2015-10-09', '08:41:25', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(153, 6, '2015-10-09', '08:58:31', '::1 - Registered (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(154, 1, '2015-10-09', '17:34:06', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(155, 1, '2015-10-09', '18:45:23', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(156, 1, '2015-10-09', '19:02:02', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(157, 1, '2015-10-09', '19:02:04', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(158, 1, '2015-10-09', '19:02:07', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(159, 1, '2015-10-09', '19:03:45', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(160, 1, '2015-10-09', '19:05:21', '::1 - Logged out (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(161, 1, '2015-10-09', '19:05:29', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(162, 1, '2015-10-10', '00:31:59', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(163, 1, '2015-10-10', '01:39:43', 'Uploaded file /user_uploads/gallery/code_geass_lamperouge_lelouch_best_widescreen_background_desktop_1200x849_hd-wallpaper-1288630.jpg'),
+(164, 1, '2015-10-10', '01:39:49', 'Uploaded file /user_uploads/gallery/1.jpg');
 
 -- --------------------------------------------------------
 
@@ -235,7 +284,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active`, `profile_picture`, `full_name`, `roll_number`, `phone_number`, `confirmation_link`, `dob`, `address`, `gender`, `marital_status`, `distinguished`) VALUES
 (1, 'varun', '$2a$08$Zu3VrELhRcG42tOXzulIL.U0vKKcv6PYGUaRS/rNR6CPfPOOVxzcK', 'superadmin', 'varun.10@live.com', 1, 'user_uploads/profile_images/1.jpg', 'Varun Garg', '13/ICS/057', '', 'e6f1a06d93ce4acf13d26a35bf0550be0d76', '20-8-1995', '37, Rajdhani Nikunk, I.P. Extension 94, Delhi 92', 'male', 'single', 0),
-(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'superadmin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '13/ICS/035', '', '', '', '', '', '', 0);
+(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'superadmin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '13/ICS/035', '', '', '', '', '', '', 1),
+(6, 'pppp', '$2a$08$x/y63NNu/NSZu18vYJNn0..0fBZTNN6megk7QDBPpJBN6XidFvYt.', 'student', 'pp@pp.pp', 0, '', 'pppp', '', '', '07158b8b231e8c021eeeb3b5508914415851', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -258,8 +308,6 @@ CREATE TABLE `work_details` (
 --
 
 INSERT INTO `work_details` (`id`, `user_id`, `start_year`, `end_year`, `company_name`, `location`, `designation`) VALUES
-(2, 2, '1001', '100', '100', '100', '100'),
-(3, 7, 'asaa', 'asas', 'dsdsd', 'asasa', 'asas'),
 (4, 1, 'oo', 'oo', 'oo', 'oo', 'oo'),
 (5, 1, '22', '22', 'www', '33', '222');
 
@@ -305,22 +353,22 @@ ALTER TABLE `work_details`
 -- AUTO_INCREMENT for table `alumni_events`
 --
 ALTER TABLE `alumni_events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `edu_info`
 --
 ALTER TABLE `edu_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `logs`
 --
 ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `work_details`
 --
