@@ -51,7 +51,7 @@
                 outline: none;
             }
             .content {
-                min-height: calc(100vh - 120px);
+                min-height: calc(100vh - 125px);
                 /* 80px header + 40px footer = 120px  */
             }
             body{
