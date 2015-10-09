@@ -41,7 +41,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div class="container">
             <br />
             <nav class="navbar navbar-fixed-top navbar-inverse navbar-default navbar-custom" role="navigation">
-                <a class="navbar-brand" href="<?php echo base_url() ?>"><font size="6" color="white">Welcome To GBU Alumni</font></a> 
+                <a class="navbar-brand" href="<?php echo dirname(base_url()) ?>"><font size="6" color="white">Welcome To GBU Alumni</font></a> 
             </nav>
             <div class="row centered-form">
                 <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">

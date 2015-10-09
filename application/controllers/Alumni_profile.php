@@ -267,7 +267,7 @@ class Alumni_profile extends CI_Controller {
 
     function load_profile() {
         if ($this->session->userdata('loggedin') != 1)
-            redirect('/users?redirect=' . base_url('alumni_profile') . '?' . $_SERVER['QUERY_STRING']);
+            redirect('/users?redirect=' . current_url() . '?' . $_SERVER['QUERY_STRING']);
 		$this->load->view('pages/common/link');
         $this->load->view('pages/common/header');
         $this->load->view('pages/alumni/load_profile');
