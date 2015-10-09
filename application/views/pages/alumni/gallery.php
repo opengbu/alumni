@@ -8,15 +8,24 @@ echo '<br /><br />'
 ?>
 <div class="container-fluid">
     <div class="popup-gallery">
-        <?php
-        foreach ($names as $name) {
-            echo '<div class="col-sm-4">';
-            echo '<a href ="' . base_url('user_uploads/gallery/' . $name) . '" ><img src = "' . base_url('user_uploads/gallery/' . $name) . '" width="100%"/></a>';
-            echo '</div>';
-        }
-        ?>
-            <br /><br /><br /><br /><br /><br /><br />
-
+        <div class="row">
+            <?php
+            $count = 0;
+            foreach ($names as $name) {
+                $count++;
+                echo '<div class="col-sm-4">';
+                echo '<a href ="' . base_url('user_uploads/gallery/' . $name) . '" ><img src = "' . base_url('user_uploads/gallery/' . $name) . '" width="100%" style="max-height: 300px;"/></a>';
+                echo '</div>';
+                if ($count % 3 == 0) {
+                    echo '</div><div class="row">';
+                    echo '<br />';
+                }
+            }
+            ?>
+        </div>
+    </div>
+    <div class="row">
+        <br />  
     </div>
 </div>
 <script>
