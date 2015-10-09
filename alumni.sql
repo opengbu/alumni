@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.0.2
+-- version 4.1.14
 -- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Oct 09, 2015 at 09:22 PM
--- Server version: 10.0.21-MariaDB-log
--- PHP Version: 5.6.14
+-- Host: 127.0.0.1
+-- Generation Time: Oct 09, 2015 at 08:58 PM
+-- Server version: 5.6.17
+-- PHP Version: 5.5.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -14,7 +14,7 @@ SET time_zone = "+00:00";
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
 
 --
 -- Database: `alumni`
@@ -26,16 +26,17 @@ SET time_zone = "+00:00";
 -- Table structure for table `alumni_events`
 --
 
-CREATE TABLE `alumni_events` (
+CREATE TABLE IF NOT EXISTS `alumni_events` (
   `event_date` date NOT NULL,
   `event_name` varchar(100) NOT NULL,
   `event_profile` varchar(500) NOT NULL,
   `event_location` varchar(100) NOT NULL,
   `director_name` varchar(50) NOT NULL,
   `director_info` varchar(200) NOT NULL,
-  `event_id` int(11) NOT NULL,
-  `director_image` varchar(200) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `event_id` int(11) NOT NULL AUTO_INCREMENT,
+  `director_image` varchar(200) NOT NULL,
+  PRIMARY KEY (`event_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `alumni_events`
@@ -43,8 +44,7 @@ CREATE TABLE `alumni_events` (
 
 INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event_location`, `director_name`, `director_info`, `event_id`, `director_image`) VALUES
 ('2015-12-18', 'ALUMNI MEET', 'Lets connect with our old mates and refresh our memories', 'GAUTAM BUDDHA UNIVERSITY', 'SHOBHIT SINGH', 'Event leader', 1, 'user_uploads/director_images/1.jpg'),
-('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', 2, 'user_uploads/director_images/2.jpg'),
-('0000-00-00', 'qq &#039; aaasa', 'qqqq', 'qqqq', 'qqqq', 'qq', 4, 'user_uploads/director_images/4.png');
+('2016-03-23', 'DISTINGUISH ALUMNI AWARDS', 'ceremony to encourage the work done by GBU ALUMNI', 'GAUTAM BUDDHA UNIVERSITY', 'BHAWESH CHOPRA', 'Event Organizer', 2, 'user_uploads/director_images/2.jpg');
 
 -- --------------------------------------------------------
 
@@ -52,21 +52,15 @@ INSERT INTO `alumni_events` (`event_date`, `event_name`, `event_profile`, `event
 -- Table structure for table `edu_info`
 --
 
-CREATE TABLE `edu_info` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `edu_info` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `start_year` varchar(100) NOT NULL,
   `passout_year` varchar(100) NOT NULL,
   `course_name` varchar(100) NOT NULL,
-  `school_name` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `edu_info`
---
-
-INSERT INTO `edu_info` (`id`, `user_id`, `start_year`, `passout_year`, `course_name`, `school_name`) VALUES
-(4, 1, '3333', '333', '333', '');
+  `school_name` varchar(150) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 -- --------------------------------------------------------
 
@@ -74,13 +68,14 @@ INSERT INTO `edu_info` (`id`, `user_id`, `start_year`, `passout_year`, `course_n
 -- Table structure for table `logs`
 --
 
-CREATE TABLE `logs` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `logs` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `date` date NOT NULL,
   `time` time NOT NULL,
-  `action` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `action` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=188 ;
 
 --
 -- Dumping data for table `logs`
@@ -234,7 +229,30 @@ INSERT INTO `logs` (`id`, `user_id`, `date`, `time`, `action`) VALUES
 (161, 1, '2015-10-09', '19:05:29', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
 (162, 1, '2015-10-10', '00:31:59', '::1 - Logged in. (Mozilla/5.0 (X11; Linux x86_64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
 (163, 1, '2015-10-10', '01:39:43', 'Uploaded file /user_uploads/gallery/code_geass_lamperouge_lelouch_best_widescreen_background_desktop_1200x849_hd-wallpaper-1288630.jpg'),
-(164, 1, '2015-10-10', '01:39:49', 'Uploaded file /user_uploads/gallery/1.jpg');
+(164, 1, '2015-10-10', '01:39:49', 'Uploaded file /user_uploads/gallery/1.jpg'),
+(165, 5, '2015-10-09', '21:57:10', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(166, 5, '2015-10-09', '21:57:52', '::1 - Updated user - rajat (5) + updated password  (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(167, 5, '2015-10-09', '21:57:52', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(168, 5, '2015-10-09', '21:57:53', '::1 - Updated user - rajat (5) + updated password  (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(169, 5, '2015-10-09', '21:57:53', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(170, 5, '2015-10-09', '21:58:54', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(171, 5, '2015-10-09', '21:59:08', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(172, 5, '2015-10-09', '21:59:25', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(173, 5, '2015-10-09', '22:11:27', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(174, 5, '2015-10-09', '22:31:13', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(175, 5, '2015-10-09', '22:45:04', '::1 - Updated user - rajat (5) + updated password  (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(176, 5, '2015-10-09', '22:45:05', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(177, 5, '2015-10-09', '22:45:11', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(178, 5, '2015-10-09', '22:45:34', '::1 - Updated user - rajat (5) + updated password  (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(179, 5, '2015-10-09', '22:45:34', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(180, 5, '2015-10-09', '22:45:48', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(181, 5, '2015-10-09', '23:49:16', '::1 - Updated user - rajat (5) + updated password  (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(182, 5, '2015-10-09', '23:49:16', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(183, 5, '2015-10-09', '23:49:29', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(184, 5, '2015-10-09', '23:51:37', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(185, 77, '2015-10-09', '23:51:59', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(186, 77, '2015-10-09', '23:53:19', '::1 - Logged out (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) '),
+(187, 74, '2015-10-09', '23:53:56', '::1 - Logged in. (Mozilla/5.0 (Windows NT 10.0; WOW64; rv:41.0) Gecko/20100101 Firefox/41.0 ) ');
 
 -- --------------------------------------------------------
 
@@ -242,7 +260,7 @@ INSERT INTO `logs` (`id`, `user_id`, `date`, `time`, `action`) VALUES
 -- Table structure for table `update_info`
 --
 
-CREATE TABLE `update_info` (
+CREATE TABLE IF NOT EXISTS `update_info` (
   `version` float DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -259,8 +277,8 @@ INSERT INTO `update_info` (`version`) VALUES
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
-  `user_id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `users` (
+  `user_id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(25) NOT NULL,
   `password` varchar(200) NOT NULL,
   `type` varchar(40) NOT NULL,
@@ -275,8 +293,9 @@ CREATE TABLE `users` (
   `address` text NOT NULL,
   `gender` varchar(100) NOT NULL,
   `marital_status` varchar(100) NOT NULL,
-  `distinguished` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `distinguished` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=89 ;
 
 --
 -- Dumping data for table `users`
@@ -284,8 +303,47 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active`, `profile_picture`, `full_name`, `roll_number`, `phone_number`, `confirmation_link`, `dob`, `address`, `gender`, `marital_status`, `distinguished`) VALUES
 (1, 'varun', '$2a$08$Zu3VrELhRcG42tOXzulIL.U0vKKcv6PYGUaRS/rNR6CPfPOOVxzcK', 'superadmin', 'varun.10@live.com', 1, 'user_uploads/profile_images/1.jpg', 'Varun Garg', '13/ICS/057', '', 'e6f1a06d93ce4acf13d26a35bf0550be0d76', '20-8-1995', '37, Rajdhani Nikunk, I.P. Extension 94, Delhi 92', 'male', 'single', 0),
-(5, 'rajat', '$2a$08$89gL0PX4Ewl0/9RbfqBuOO6Jbp.ETHXsk.rDNtzKUkDcFe3SwBKaC', 'superadmin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '13/ICS/035', '', '', '', '', '', '', 1),
-(6, 'pppp', '$2a$08$x/y63NNu/NSZu18vYJNn0..0fBZTNN6megk7QDBPpJBN6XidFvYt.', 'student', 'pp@pp.pp', 0, '', 'pppp', '', '', '07158b8b231e8c021eeeb3b5508914415851', '', '', '', '', 0);
+(5, 'rajat', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'superadmin', 'sunny0rajat@gmail.com', 1, '', 'Rajat Saxena', '13/ICS/035', '', '', '', '', '', '', 0),
+(49, 'alokkumar', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Alok Kumar', '', '', '', '', '', '', '', 0),
+(50, 'humarafi', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Huma Rafi', '', '', '', '', '', '', '', 0),
+(51, 'deepdarshansuman', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Deep Darshan Suman', '', '', '', '', '', '', '', 0),
+(52, 'snehakumari', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Sneha Kumari', '', '', '', '', '', '', '', 0),
+(53, 'lalitkumar', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Lalit Kumar', '', '', '', '', '', '', '', 0),
+(54, 'vijaysinghrawat', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Vijay Singh Rawat', '', '', '', '', '', '', '', 0),
+(55, 'vishalmaheswari', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Vishal Maheswari', '', '', '', '', '', '', '', 0),
+(56, 'ruchianand', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Ruchi Anand', '', '', '', '', '', '', '', 0),
+(57, 'swatisingh', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Swati Singh', '', '', '', '', '', '', '', 0),
+(58, 'surbhiverma', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Surbhi Verma', '', '', '', '', '', '', '', 0),
+(59, 'kirtisingh', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Kirti Singh', '', '', '', '', '', '', '', 0),
+(60, 'ksitizgupta', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Ksitiz Gupta', '', '', '', '', '', '', '', 0),
+(61, 'vipulsingh', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Vipul Singh', '', '', '', '', '', '', '', 0),
+(62, 'somyadixit', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Somya Dixit', '', '', '', '', '', '', '', 0),
+(63, 'chiragahuja', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Chirag Ahuja', '', '', '', '', '', '', '', 0),
+(64, 'amitjha', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Amit jha', '', '', '', '', '', '', '', 0),
+(65, 'parshanttripathi', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Parshant Tripathi', '', '', '', '', '', '', '', 0),
+(66, 'siddharthsharma', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Siddharth Sharma', '', '', '', '', '', '', '', 0),
+(67, 'prashantchauhan', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Prashant Chauhan', '', '', '', '', '', '', '', 0),
+(68, 'farazshahid', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Faraz Shahid', '', '', '', '', '', '', '', 0),
+(69, 'amityadav', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Amit Yadav', '', '', '', '', '', '', '', 0),
+(70, 'neerajmishra', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Neeraj Mishra', '', '', '', '', '', '', '', 0),
+(71, 'kirtidhamija', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Kirti Dhamija', '', '', '', '', '', '', '', 0),
+(72, 'mohitnagar', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Mohit Nagar', '', '', '', '', '', '', '', 0),
+(73, 'shrutiawasthi', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Shruti Awasthi', '', '', '', '', '', '', '', 0),
+(74, 'pulkitchhabra', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Pulkit Chhabra', '', '', '', '', '', '', '', 0),
+(75, 'rishichaudhary', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Rishi Chaudhary', '', '', '', '', '', '', '', 0),
+(76, 'shivamrawat', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Shivam Rawat', '', '', '', '', '', '', '', 0),
+(77, 'mrinaljain', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Mrinal Jain', '', '', '', '', '', '', '', 0),
+(78, 'jyotikaushik', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Jyoti Kaushik', '', '', '', '', '', '', '', 0),
+(79, 'kapilkumar', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Kapil Kumar', '', '', '', '', '', '', '', 0),
+(80, 'ashwanigupta', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Ashwani Gupta', '', '', '', '', '', '', '', 0),
+(81, 'vibhushukla', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Vibhu Shukla', '', '', '', '', '', '', '', 0),
+(82, 'vikrantrana', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Vikrant Rana', '', '', '', '', '', '', '', 0),
+(83, 'vipulgautam', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Vipul Gautam', '', '', '', '', '', '', '', 0),
+(84, 'varundixit', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Varun Dixit', '', '', '', '', '', '', '', 0),
+(85, 'dineshkumar', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Dinesh Kumar', '', '', '', '', '', '', '', 0),
+(86, 'prashantsharma', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Prashant Sharma', '', '', '', '', '', '', '', 0),
+(87, 'shishirpratapsingh', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Shishir Pratap Singh', '', '', '', '', '', '', '', 0),
+(88, 'renurana', '$2a$08$qDwu17uUTcEiHyJkLTkDFuUgkJCJFZd9tJ7TSjP/XEWhhdH/k9C/C', 'student', '', 1, '', 'Renu Rana', '', '', '', '', '', '', '', 0);
 
 -- --------------------------------------------------------
 
@@ -293,87 +351,63 @@ INSERT INTO `users` (`user_id`, `username`, `password`, `type`, `email`, `active
 -- Table structure for table `work_details`
 --
 
-CREATE TABLE `work_details` (
-  `id` int(11) NOT NULL,
+CREATE TABLE IF NOT EXISTS `work_details` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `start_year` varchar(100) NOT NULL,
   `end_year` text NOT NULL,
   `company_name` varchar(100) NOT NULL,
   `location` varchar(100) NOT NULL,
-  `designation` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `designation` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=49 ;
 
 --
 -- Dumping data for table `work_details`
 --
 
 INSERT INTO `work_details` (`id`, `user_id`, `start_year`, `end_year`, `company_name`, `location`, `designation`) VALUES
-(4, 1, 'oo', 'oo', 'oo', 'oo', 'oo'),
-(5, 1, '22', '22', 'www', '33', '222');
+(6, 49, '', '', 'Coal India', '', 'Senior Officer -Materials Management'),
+(7, 50, '', '', 'ONGC', '', 'Executive -HR'),
+(8, 51, '', '', 'Honda Cars India Ltd.', '', 'Senior Executive HR'),
+(9, 52, '', '', 'policybazar.com', '', 'Product Manager'),
+(10, 53, '', '', 'Yamha Motors', '', 'HR Manager'),
+(11, 54, '', '', 'Metlife', '', 'Asst Manager, Global Sourcing'),
+(12, 55, '', '', 'HCL', '', 'Process Consultant'),
+(13, 56, '', '', 'HCL', '', 'Deputy Manager'),
+(14, 57, '', '', 'HCL', '', 'Asst Manager'),
+(15, 58, '', '', 'Power finance corporation', '', 'Manager'),
+(16, 59, '', '', 'Paytm', '', 'Management Trainee'),
+(17, 60, '', '', 'American Express', '', 'Marketing Executive'),
+(18, 61, '', '', 'H&H Pharma', '', 'Marketing Executive'),
+(19, 62, '', '', 'R system', '', 'GET'),
+(20, 63, '', '', 'Fractal Analytics', '', 'Data Scientist'),
+(21, 64, '', '', 'SMR automotive', '', 'HR Manager'),
+(22, 65, '', '', 'CBS energy', '', 'GET'),
+(23, 66, '', '', 'Sketchers Engineering Pvt. Ltd', '', 'Director'),
+(24, 67, '', '', 'NDC Technologies', '', 'Sales Manager'),
+(25, 68, '', '', 'Volga Transmissions Pvt Ltd', '', 'General Manager-Marketing'),
+(26, 69, '', '', 'Agriculture Insurance Company of India limited', '', 'Administrative Officer'),
+(27, 70, '', '', 'KartRocket', '', 'Channel Development Manager'),
+(28, 71, '', '', 'iEnergizer', '', 'Assistant Manager - Human Resources'),
+(29, 72, '', '', 'The Coca-Cola Company', '', 'Team Leader HR & IR'),
+(30, 73, '', '', 'HCL', '', 'Executive -HR'),
+(31, 74, '', '', 'Tech Mahindra', '', 'Inside Sales Leader'),
+(32, 75, '', '', 'Infosys BPO', '', 'Supervisor'),
+(33, 76, '', '', 'GENPACT', '', 'Assistant Manager'),
+(34, 77, '', '', 'Bank of India', '', 'General Banking Officer'),
+(35, 78, '', '', ' Teamlease', '', 'Associate Consultant'),
+(36, 79, '', '', 'Nuclear Power Corpoartion of India', '', 'Deputy Manager'),
+(37, 80, '', '', 'Yes Bank', '', 'Sr. Branch Service Partner'),
+(38, 81, '', '', 'JPSI', '', 'Marketing Executive'),
+(39, 82, '', '', 'Watchoid Security & Facility Services Pvt Ltd', '', 'Business Development Manager'),
+(40, 83, '', '', 'Encyclopaedia Britannica India', '', 'Analyst'),
+(41, 84, '', '', 'The SearchManager''s', '', 'Assistant Manager'),
+(42, 85, '', '', 'Ernst & Young', '', 'Sr. Consultant'),
+(43, 86, '', '', 'Jaipuria Institute of Management', '', 'Asst. Professor'),
+(44, 87, '', '', 'Minda Corporation', '', 'GET'),
+(45, 88, '', '', 'INGVysa Bank', '', 'Asst Manager');
 
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `alumni_events`
---
-ALTER TABLE `alumni_events`
-  ADD PRIMARY KEY (`event_id`);
-
---
--- Indexes for table `edu_info`
---
-ALTER TABLE `edu_info`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `logs`
---
-ALTER TABLE `logs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`);
-
---
--- Indexes for table `work_details`
---
-ALTER TABLE `work_details`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `alumni_events`
---
-ALTER TABLE `alumni_events`
-  MODIFY `event_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `edu_info`
---
-ALTER TABLE `edu_info`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `logs`
---
-ALTER TABLE `logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=165;
---
--- AUTO_INCREMENT for table `users`
---
-ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
---
--- AUTO_INCREMENT for table `work_details`
---
-ALTER TABLE `work_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
