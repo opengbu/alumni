@@ -17,36 +17,33 @@
         <br>
               
 			
-            <div class="col-md-12 text-center">
+            <div class="col-md-2 col-md-offset-5">
                 <br/>
-                    <b><p style = "color:white;"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> OpenGBU, Inc.</p></b>
-              <br/>
-       </div>
+                    <b><center><a style="text-decoration:none; cursor:pointer;" data-toggle="modal" data-target="#about"><p style = "color:white;"><span class="glyphicon glyphicon-copyright-mark" aria-hidden="true"></span> OpenGBU, Inc.</p></a></center></b>
+				<br/>
+			</div>
         
 
     </footer>
-
-
-<!--disqus code for counting comments begins-->
-<script type="text/javascript">
-        
-        
-	if(count_comments==true)
-	{
-		/* * * CONFIGURATION VARIABLES * * */
-		var disqus_shortname = 'gbuonline';
-	//	var disqus_identifier = 'blog_7';
 	
-		/* * * DON'T EDIT BELOW THIS LINE * * */
-		(function () {
-			var s = document.createElement('script'); s.async = true;
-			s.type = 'text/javascript';
-			s.src = '//' + disqus_shortname + '.disqus.com/count.js';
-			(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
-		}());
-	}
-</script>
-<!--disqus code for counting comments ends-->
+	
+	<!-- Modal for OpenGBU -->
+<div class="modal fade" id="about" style="padding-top:30px;" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">About This Website</h4>
+      </div>
+      <div class="modal-body" style="text-align: center">
+		This website is developed and maintained by<br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
 	
 	
 </body>

@@ -1,16 +1,22 @@
+<style>
+#presen{
+	margin-left: 20px;	
+}
+</style>
+
 <link rel="stylesheet" href="<?php echo $this->cdn->res_url('resources/css/magnific.css') ?>">
 
 <script src="<?php echo $this->cdn->res_url('resources/js/magnific.js') ?>"></script>
 <?php
 $this->load->helper('file');
 $names = get_filenames("user_uploads/gallery");
-echo '<br /><br />'
+echo '<br /><br /><br />'
 ?>
 <div class="container-fluid">
     <div class="popup-gallery">
         <?php
         foreach ($names as $name) {
-            echo '<a href ="' . base_url('user_uploads/gallery/' . $name) . '" ><img src = "' . base_url('user_uploads/gallery/' . $name) . '" height="300" width="300"/></a>';
+            echo '<a href ="' . base_url('user_uploads/gallery/' . $name) . '" id="presen"><img src = "' . base_url('user_uploads/gallery/' . $name) . '" height="300" width="300"/></a>';
         }
         ?>
         <!--
@@ -24,6 +30,7 @@ echo '<br /><br />'
         -->
     </div>
 </div>
+<br/><br/>
 <script>
     $(document).ready(function () {
         $('.popup-gallery').magnificPopup({
