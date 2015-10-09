@@ -64,16 +64,35 @@ hr.style-seven
 					<div class="panel panel-default">
 						<div class="panel-body">
 							<div class="row">
-								<div class="col-md-5">
+								<div class="col-md-4">
 									<img id="tn" src="<?php echo base_url().$user_data->profile_picture ?>" height="170" width="130"/>
 								</div>
-								<div class="col-md-7" id="spn">
-									Name :  <?=$user_data->full_name?><br/>
-									School : <br/>
-									Passout : <?=$edu_data->ps_yr?><br/><br/>
-									Joined : <?=$work_data->company_name?><br/>
-									Position : <?=$work_data->designation?><br/>
-									Location : <?=$work_data->location?>
+								<div class="col-md-8" id="spn">
+									<div class="row">
+										<div class="col-md-4"><b>Name : </b></div>
+										<div class="col-md-8"><?=$user_data->full_name?></div>
+									</div>
+									<div class="row">
+										<div class="col-md-4"><b>School : </b></div>
+										<div class="col-md-8"><!--from DB--></div>
+									</div>
+									<div class="row">
+										<div class="col-md-4"><b>Passout : </b></div>
+										<div class="col-md-8"><?=$edu_data->ps_yr?></div>
+									</div>
+									<br/>
+									<div class="row">
+										<div class="col-md-4"><b>Joined : </b></div>
+										<div class="col-md-8"><?=$work_data->company_name?></div>
+									</div>
+									<div class="row">
+										<div class="col-md-4"><b>Position : </b></div>
+										<div class="col-md-8"><?=$work_data->designation?></div>
+									</div>
+									<div class="row">
+										<div class="col-md-4"><b>Location : </b></div>
+										<div class="col-md-8"><?=$work_data->location?></div>
+									</div>
 								</div>
 							</div>
 						</div>
