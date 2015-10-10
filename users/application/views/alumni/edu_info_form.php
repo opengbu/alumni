@@ -17,6 +17,12 @@
     </p>
 
     <p>
+        <label for="school_name">School Name (Example ICT)<span class="required">*</span></label>
+        <?php echo form_error('school_name'); ?>
+        <br /><input class="form-control"  id="company_name" type="text" name="school_name" maxlength="50" value="<?php echo set_value('school_name', @$school_name); ?>"  />
+    </p>
+    
+    <p>
         <label for="start_year">Start Year <span class="required">*</span></label>
         <?php echo form_error('start_year'); ?>
         <br /><input class="form-control" id="start_year" type="text" name="start_year" maxlength="15" value="<?php echo set_value('start_year', @$start_year); ?>"  />
@@ -24,7 +30,7 @@
 
     <p>
         <label for="passout_year">Pass Out Year<span class="required">*</span></label>
-        <?php echo form_error('end_year'); ?>
+        <?php echo form_error('passout_year'); ?>
         <br /><input class="form-control" id="end_year" type="text" name="passout_year" maxlength="15" value="<?php echo set_value('passout_year', @$passout_year); ?>"  />
     </p>
 

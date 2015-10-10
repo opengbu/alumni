@@ -43,6 +43,8 @@ class Alumni_profile extends CI_Controller {
         $this->form_validation->set_rules('start_year', 'Start Year', 'required|max_length[15]');
         $this->form_validation->set_rules('passout_year', 'passout Year', 'required|max_length[15]');
         $this->form_validation->set_rules('course_name', 'Course Name', 'required|max_length[50]');
+        $this->form_validation->set_rules('school_name', 'School Name', 'required|max_length[50]');
+
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
     }
 
@@ -219,6 +221,7 @@ class Alumni_profile extends CI_Controller {
                 'start_year' => html_purify($this->input->post('start_year')),
                 'passout_year' => html_purify($this->input->post('passout_year')),
                 'course_name' => html_purify($this->input->post('course_name')),
+                'school_name' => strtoupper(html_purify($this->input->post('school_name'))),
             );
 
 
@@ -250,6 +253,7 @@ class Alumni_profile extends CI_Controller {
                 'start_year' => html_purify($this->input->post('start_year')),
                 'passout_year' => html_purify($this->input->post('passout_year')),
                 'course_name' => html_purify($this->input->post('course_name')),
+                'school_name' => strtoupper(html_purify($this->input->post('school_name'))),
             );
 
             $this->db->update('edu_info', $form_data, "id = '" . $this->input->get('edu_id') . "'");
