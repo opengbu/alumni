@@ -36,7 +36,10 @@
         <h4 class="modal-title" id="myModalLabel">About This Website</h4>
       </div>
       <div class="modal-body" style="text-align: center">
-		This website is developed and maintained by<br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/>
+		<b>Supervised By</b><br/>
+		<a href="https://www.linkedin.com/pub/vinay-litoria/a/706/77b" target="_blank">Vinay Litoria</a><br/>
+		( Corporate Relation Cell )<br/><br/>
+		<b>Developed and Maintained By</b><br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
