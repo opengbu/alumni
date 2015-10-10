@@ -187,7 +187,7 @@ hr {
 		<br> 
 		
 		<!--your content-->
-		<div style="margin-left:4px;" class="row">
+		<div style="margin-left:0px;" class="row">
 		
 		<img  src="<?php echo $this->cdn->res_url('resources/images/image2.jpg')?>" height="300px" width="1300px"/>
 		<div class=" col-md-10">
@@ -214,8 +214,8 @@ hr {
 
 		
 			
-			<u><a style="color: #0c0d49" href="">Placement</a></u><br><br>
-			<u><a style="color: #0c0d49" href="">Blogs</a> </u><br><br>
+			<u><a style="color: #0c0d49" href="http://www.gbuonline.in/feat/placements" target="_blank">Placement</a></u><br><br>
+			<u><a style="color: #0c0d49" href="http://www.gbuonline.in/blogs/recent_blogs" target="_blank">Blogs</a> </u><br><br>
 			<u><a style="color: #0c0d49" href="">Alumni Weekend</a></u> 
 		
 			
@@ -239,7 +239,7 @@ hr {
 		
 		
 		
-	$q=$this->db->query("select *,extract(day from event_date) as day,extract(month from event_date) as month from alumni_events ORDER BY event_date DESC");
+	$q=$this->db->query("select *,extract(day from event_date) as day,extract(month from event_date) as month,extract(year from event_date) as year from alumni_events ORDER BY event_date DESC");
 	
 	
 	
@@ -263,6 +263,7 @@ $monthName = $dateObj->format('F'); // March
 	
 	<i><?php echo $row->day; ?></i>
 	  <i><?php echo $monthName; ?></i>
+	  <?php echo $row->year; ?>
       <div class="hidden-xs">
         <span class="fa fa-thumbs-up fa-2x"></span>
         <span class="fa fa-thumbs-down fa-2x"></span>

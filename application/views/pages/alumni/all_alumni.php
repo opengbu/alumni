@@ -40,7 +40,7 @@
                         <div class="col-sm-3">
                             Name
                         </div>
-						<div class="col-sm-2">
+						<div class="col-sm-1">
                             School
                         </div>
                         <div class="col-sm-1">
@@ -49,7 +49,7 @@
 						<div class="col-sm-3">
                             Organization
                         </div>
-						<div class="col-sm-2">
+						<div class="col-sm-3">
                             Designation
                         </div>
                         <div class="col-sm-1">
@@ -80,7 +80,7 @@
 						<div class="col-sm-3">
 							<?= $row->full_name ?>
                         </div>
-						<div class="col-sm-2">
+						<div class="col-sm-1">
 							<?php if($edu_q->num_rows()>0) echo $edu->school_name ?>
                         </div>
                         <div class="col-sm-1">
@@ -89,7 +89,7 @@
 						<div class="col-sm-3">
                             <?php if($work_q->num_rows()>0) echo $work->company_name ?>
                         </div>
-						<div class="col-sm-2">
+						<div class="col-sm-3">
                             <?php if($work_q->num_rows()>0) echo $work->designation ?>
                         </div>
                         <div class="col-sm-1">
