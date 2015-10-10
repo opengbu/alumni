@@ -92,6 +92,7 @@ class User_controls extends CI_Controller {
                 $this->load->view('User_form');
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
 
             $password = $this->input->post('password');
             $hash = $this->bcrypt->hash_password($password);
@@ -99,19 +100,19 @@ class User_controls extends CI_Controller {
             $extra_log_message = NULL;
 
             $form_data = array(
-                'email' => set_value('email'),
-                'type' => set_value('type'),
-                'password' => set_value('password'),
-                'full_name' => set_value('full_name'),
-                'roll_number' => set_value('roll_number'),
+                'email' => html_purify($this->input->post('email')),
+                'type' => html_purify($this->input->post('type')),
+                'password' => html_purify($this->input->post('password')),
+                'full_name' => html_purify($this->input->post('full_name')),
+                'roll_number' => html_purify($this->input->post('roll_number')),
                 'password' => $hash,
                 'confirmation_link' => $confirmation_link,
                 'profile_picture' => $this->image_path,
                 'active' => 1, // auto activate
-                'dob' => set_value('dob'),
-                'address' => set_value('address'),
-                'gender' => set_value('gender'),
-                'marital_status' => set_value('marital_status')
+                'dob' => html_purify($this->input->post('dob')),
+                'address' => html_purify($this->input->post('address')),
+                'gender' => html_purify($this->input->post('gender')),
+                'marital_status' => html_purify($this->input->post('marital_status')),
             );
 
             if (strlen($this->image_path) == 0)
@@ -139,7 +140,7 @@ class User_controls extends CI_Controller {
                 unset($form_data['confirmation_link']); //not needed
 
                 $this->db->update('users', $form_data, " user_id = '" . $this->input->get('user_id') . "'");
-                $this->logger->insert('Updated user - ' . set_value('username') . ' (' . $this->input->get('user_id') . ')' . $extra_log_message, TRUE, TRUE);
+                $this->logger->insert('Updated user - ' . html_purify($this->input->post('username')) . ' (' . $this->input->get('user_id') . ')' . $extra_log_message, TRUE, TRUE);
 
                 if ($this->input->get('user_id') == $this->session->userdata('user_id')) {
                     redirect(base_url() . '/logout');

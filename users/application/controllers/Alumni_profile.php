@@ -63,12 +63,13 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('alumni/create_profile');
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'dob' => set_value('dob'),
-                'address' => set_value('address'),
-                'gender' => set_value('gender'),
-                'marital_status' => set_value('marital_status')
+                'dob' => html_purify($this->input->post('dob')),
+                'address' => html_purify($this->input->post('address')),
+                'gender' => html_purify($this->input->post('gender')),
+                'marital_status' => html_purify($this->input->post('marital_status'))
             );
 
 
@@ -99,12 +100,14 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('alumni/create_profile', $form_data);
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
+
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'dob' => set_value('dob'),
-                'address' => set_value('address'),
-                'gender' => set_value('gender'),
-                'marital_status' => set_value('marital_status')
+                'dob' => html_purify($this->input->post('dob')),
+                'address' => html_purify($this->input->post('address')),
+                'gender' => html_purify($this->input->post('gender')),
+                'marital_status' => html_purify($this->input->post('marital_status')),
             );
 
 
@@ -131,13 +134,15 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('alumni/work_info_form');
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
+
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'start_year' => set_value('start_year'),
-                'end_year' => set_value('end_year'),
-                'company_name' => set_value('company_name'),
-                'location' => set_value('location'),
-                'designation' => set_value('designation')
+                'start_year' => html_purify($this->input->post('start_year')),
+                'end_year' => html_purify($this->input->post('end_year')),
+                'company_name' => html_purify($this->input->post('company_name')),
+                'location' => html_purify($this->input->post('location')),
+                'designation' => html_purify($this->input->post('designation')),
             );
 
             $this->db->insert('work_details', $form_data);
@@ -162,13 +167,15 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('alumni/work_info_form', $form_data);
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
+
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'start_year' => set_value('start_year'),
-                'end_year' => set_value('end_year'),
-                'company_name' => set_value('company_name'),
-                'location' => set_value('location'),
-                'designation' => set_value('designation')
+                'start_year' => html_purify($this->input->post('start_year')),
+                'end_year' => html_purify($this->input->post('end_year')),
+                'company_name' => html_purify($this->input->post('company_name')),
+                'location' => html_purify($this->input->post('location')),
+                'designation' => html_purify($this->input->post('designation')),
             );
 
             $this->db->update('work_details', $form_data, "id = '" . $this->input->get('work_id') . "'");
@@ -205,11 +212,13 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('alumni/edu_info_form');
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
+
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'start_year' => set_value('start_year'),
-                'passout_year' => set_value('passout_year'),
-                'course_name' => set_value('course_name'),
+                'start_year' => html_purify($this->input->post('start_year')),
+                'passout_year' => html_purify($this->input->post('passout_year')),
+                'course_name' => html_purify($this->input->post('course_name')),
             );
 
 
@@ -234,11 +243,13 @@ class Alumni_profile extends CI_Controller {
             $this->load->view('alumni/edu_info_form', $form_data);
             $this->load->view('common/footer');
         } else {
+            $this->load->helper('htmlpurifier');
+
             $form_data = array(
                 'user_id' => $this->session->userdata('user_id'),
-                'start_year' => set_value('start_year'),
-                'passout_year' => set_value('passout_year'),
-                'course_name' => set_value('course_name'),
+                'start_year' => html_purify($this->input->post('start_year')),
+                'passout_year' => html_purify($this->input->post('passout_year')),
+                'course_name' => html_purify($this->input->post('course_name')),
             );
 
             $this->db->update('edu_info', $form_data, "id = '" . $this->input->get('edu_id') . "'");

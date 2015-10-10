@@ -55,16 +55,16 @@ class Alumni_events extends CI_Controller {
                 $this->load->view('alumni/event_form');
             $this->load->view('common/footer');
         } else {
-
+            $this->load->helper('htmlpurifier');
             $extra_log_message = NULL;
 
             $form_data = array(
-                'event_date' => set_value('event_date'),
-                'event_name' => set_value('event_name'),
-                'event_profile' => set_value('event_profile'),
-                'event_location' => set_value('event_location'),
-                'director_name' => set_value('director_name'),
-                'director_info' => set_value('director_info'),
+                'event_date' => html_purify($this->input->post('event_date')),
+                'event_name' => html_purify($this->input->post('event_name')),
+                'event_profile' => html_purify($this->input->post('event_profile')),
+                'event_location' => html_purify($this->input->post('event_location')),
+                'director_name' => html_purify($this->input->post('director_name')),
+                'director_info' => html_purify($this->input->post('director_info')),
                 'director_image' => $this->image_path,
             );
 
@@ -74,10 +74,10 @@ class Alumni_events extends CI_Controller {
             if ($this->input->get('event_id') != "") {
 
                 $this->db->update('alumni_events', $form_data, " event_id = '" . $this->input->get('event_id') . "'");
-                $this->logger->insert('Updated alumni event ' . set_value('event_name') . ' (' . $this->input->get('event_id') . ')');
+                $this->logger->insert('Updated alumni event ' . html_purify($this->input->post('event_name')) . ' (' . $this->input->get('event_id') . ')');
             } else {
                 $this->db->insert('alumni_events', $form_data);
-                $this->logger->insert('Created alumni event ' . set_value('event_name'));
+                $this->logger->insert('Created alumni event ' . html_purify($this->input->post('event_name')));
             }
             redirect(base_url() . 'Alumni_events/view_all');
         }
