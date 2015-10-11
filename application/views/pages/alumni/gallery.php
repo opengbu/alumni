@@ -4,6 +4,7 @@
 <?php
 $this->load->helper('file');
 $names = get_filenames("user_uploads/gallery");
+sort($names, SORT_NATURAL | SORT_FLAG_CASE);
 echo '<br /><br />'
 ?>
 <div class="container-fluid">

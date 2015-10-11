@@ -52,7 +52,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="panel-body">
                             <center>
-                                <img width="50%" src ="<?php echo $this->cdn->base() . '/resources/images/' . '200x200.bmp' ?>" >
+                                <img width="50%" src ="<?php echo $this->cdn->base() . '/resources/images/' . 'logo.png' ?>" >
                             </center>
 
                             <br>
