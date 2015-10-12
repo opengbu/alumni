@@ -39,7 +39,14 @@
 		<b>Supervised By</b><br/>
 		<a href="https://www.linkedin.com/pub/vinay-litoria/a/706/77b" target="_blank">Vinay Litoria</a><br/>
 		( Corporate Relation Cell )<br/><br/>
-		<b>Developed and Maintained By</b><br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/>
+		Special thanks to our <b>Mentors<br /></b>
+<a href="https://in.linkedin.com/pub/arun-solanki/9/7a7/6a2" target="_blank">Arun Solanki</a><br/>
+<a href="https://in.linkedin.com/in/amitkawasthi" target="_blank">Amit K. Awasthi</a><br/><br />
+		<u><b>Developers</b><br/></u>
+		<a href="https://careers.stackoverflow.com/varun-garg" target="_blank">Varun Garg</a><br/>
+		<a href="https://in.linkedin.com/in/rajat24" target="_blank">Rajat Saxena</a><br/>
+		<a href="https://github.com/rishabh279" target="_blank">Rishabh Ahuja</a><br/><br />
+		<b>Maintained By</b><br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/><br />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
