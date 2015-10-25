@@ -23,11 +23,11 @@
     <?php
 	if($special=='all')
 	{
-		$select_rows = $this->db->query("select full_name, user_id from users;");
+		$select_rows = $this->db->query("select full_name, user_id from users order by user_id desc;");
     }
 	else if($special=='distinguished') 
 	{
-		$select_rows = $this->db->query("select full_name, user_id from users where distinguished = '1';");
+		$select_rows = $this->db->query("select full_name, user_id from users where distinguished = '1' order by user_id desc;");
 	}
 	$sum = 0;
 	

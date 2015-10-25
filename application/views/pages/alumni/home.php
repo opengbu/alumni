@@ -13,7 +13,7 @@
         <!--your content-->
         <div>
             <br/><br/><br/>
-            <center><p style=" font-size: 350%; font-family: 'Merriweather Sans', sans-serif;">Gautam Buddha University</p></center>
+            <center><p style="font-size: 350%; font-family: 'Merriweather Sans', sans-serif; text-shadow:2px 2px 4px #000000;">Gautam Buddha University</p></center>
             <br/><br/>
         </div>
 
