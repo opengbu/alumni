@@ -19,8 +19,8 @@ $basic_info = $basic_info_q->row();
     }
 </style>
 <div class="container"style="padding-top:50px; padding-bottom:50px;">
-	<h3><span class="label label-default">Basic Information</span></h3>
-	
+    <h3><span class="label label-default">Basic Information</span></h3>
+
     <?php
     if ($basic_info_q->num_rows() == 0) {
         echo "<b>The requested profile does not exist</b>";
@@ -66,7 +66,7 @@ $basic_info = $basic_info_q->row();
         <li class="list-group-item list-group-item-info">
             <div class="row">
                 <div class="col-sm-4">
-                    <label>Sex:</label>
+                    <label>Gender:</label>
                 </div>
                 <div class="col-sm-4">
                     <?= ucfirst($basic_info->gender) ?>
@@ -108,14 +108,14 @@ $basic_info = $basic_info_q->row();
                 </div>
             </div>
         </li>
-<br/><br/>		
+        <br/><br/>		
     </ul>     
     <br/>
     <div style="padding-bottom: 30px;padding-top: 30px;">
 
         <h3><span class="label label-default">Work Information</span></h3>
         <br/><br/>
-		<?php
+        <?php
         $select_rows = $this->db->query("select id,company_name,start_year,end_year,designation,location from work_details where work_details.user_id = '$user_id' ");
 
         if ($select_rows->num_rows() > 0) {
@@ -140,19 +140,16 @@ $basic_info = $basic_info_q->row();
                     </li>
                 </b>
                 <?php
-				$count=0;
+                $count = 0;
                 foreach ($select_rows->result() as $row) {
                     $count++;
-					if($count%2==0)
-						{	
-							$color='default';
-						}
-					else
-						{	
-							$color='info';
-						}
-					?>
-                    <li class="list-group-item list-group-item-<?=$color?>">
+                    if ($count % 2 == 0) {
+                        $color = 'default';
+                    } else {
+                        $color = 'info';
+                    }
+                    ?>
+                    <li class="list-group-item list-group-item-<?= $color ?>">
                         <div class="row">
                             <div class="col-sm-2">
                                 <?= $row->company_name ?>
@@ -178,7 +175,7 @@ $basic_info = $basic_info_q->row();
             echo "<b>Nothing to Display, no work data found</b>";
         }
         ?>
-		<br/><br/><br/><br/>
+        <br/><br/><br/><br/>
     </div>
     <div style="padding-bottom: 30px;padding-top: 30px;">
 
@@ -186,10 +183,10 @@ $basic_info = $basic_info_q->row();
     <div style="padding-bottom: 30px;padding-top: 30px;">
 
         <h3><span class="label label-default">Education Information</span></h3>
-		<br/><br/>
+        <br/><br/>
 
         <?php
-        $select_rows = $this->db->query("select id,start_year,passout_year,course_name from edu_info where user_id = '$user_id' ");
+        $select_rows = $this->db->query("select id,start_year,passout_year,course_name,school_name from edu_info where user_id = '$user_id' ");
         $sum = 0;
 
         if ($select_rows->num_rows() > 0) {
@@ -202,6 +199,9 @@ $basic_info = $basic_info_q->row();
                                 Course
                             </div>
                             <div class="col-sm-2">
+                                School
+                            </div>
+                            <div class="col-sm-2">
                                 Start Year
                             </div>
                             <div class="col-sm-2">
@@ -211,22 +211,22 @@ $basic_info = $basic_info_q->row();
                     </li>
                 </b>
                 <?php
-				$county=0;
+                $county = 0;
                 foreach ($select_rows->result() as $row) {
                     $county++;
-					if($county%2==0)
-						{	
-							$color='default';
-						}
-					else
-						{	
-							$color='info';
-						}
-					?>
-                    <li class="list-group-item list-group-item-<?=$color?>">
+                    if ($county % 2 == 0) {
+                        $color = 'default';
+                    } else {
+                        $color = 'info';
+                    }
+                    ?>
+                    <li class="list-group-item list-group-item-<?= $color ?>">
                         <div class="row">
                             <div class="col-sm-6">
                                 <?= $row->course_name ?>
+                            </div>
+                            <div class="col-sm-2">
+                                <?= $row->school_name ?>
                             </div>
                             <div class="col-sm-2">
                                 <?= $row->start_year ?>

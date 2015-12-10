@@ -3,6 +3,8 @@
  *  Created on :Sep 02, 2015, 2:20:36 AM
  *  Author     :Varun Garg <varun.10@live.com>
  */
+
+$schools = $this->Schools->get_schools();
 ?>
 <div class="container-fluid col-sm-10" >
     <h3>Add/Update Education Information</h3>
@@ -17,11 +19,11 @@
     </p>
 
     <p>
-        <label for="school_name">School Name (Example ICT)<span class="required">*</span></label>
-        <?php echo form_error('school_name'); ?>
-        <br /><input class="form-control"  id="company_name" type="text" name="school_name" maxlength="50" value="<?php echo set_value('school_name', @$school_name); ?>"  />
+        <label for="school_name">School Name<span class="required">*</span></label><br />
+        <?php echo form_dropdown('school_name', $schools, set_value("school_name", @$school_name), 'class="selectpicker" data-width="70%"');
+        ?>
     </p>
-    
+
     <p>
         <label for="start_year">Start Year <span class="required">*</span></label>
         <?php echo form_error('start_year'); ?>

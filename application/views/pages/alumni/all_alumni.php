@@ -27,7 +27,7 @@
         margin: 0px;
     }
 </style>
-<div class="container">
+<div class="container-fluid">
 <div class ="col-sm-12" style="padding-top:50px; padding-bottom:50px;">
 
     <h3><span class="label label-default"><?=ucfirst($special);?> Alumni</span></h3>

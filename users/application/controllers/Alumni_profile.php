@@ -7,6 +7,11 @@
 
 class Alumni_profile extends CI_Controller {
 
+    function __construct() {
+        parent::__construct();
+        $this->load->model('Schools');
+    }
+
     function basic_form_1() {
         $this->load->helper('form');
         $this->load->helper('url');
@@ -232,6 +237,7 @@ class Alumni_profile extends CI_Controller {
     }
 
     function edit_education_info() {
+
         if ($this->session->userdata('loggedin') != 1)
             redirect('/users?redirect=' . current_url() . "?" . $_SERVER['QUERY_STRING']);
 
