@@ -14,7 +14,7 @@
             border-radius:5px;
             height: 30px;
             width: 30px;
-            transition: width 1s, height 1s;
+            transition: width 0.5s, height 0.5s;
         }
 
     .pic:hover {
