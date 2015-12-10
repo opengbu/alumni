@@ -21,7 +21,7 @@
             <center>
                 <h2><span class="label label-danger">Alumni Community</span></h2>
                 <br><br>
-                <p>Gautam Buddha University alumni community has more than <?=$this->db->query("select count(*) as num from users")->row()->num;?> members.<br>
+                <p>Gautam Buddha University alumni community has more than <?= $this->db->query("select count(*) as num from users")->row()->num; ?> members.<br>
                     The university aims to produce future leaders and entrepreneurs who can inspire the next generation.<br/>
                     The objective of this Alumni Community is to provide a platform to connect and discover GBUites present across the globe. 
                 </p>
@@ -60,7 +60,7 @@
                         ?>
 
                         <div class="col-md-6">
-                            <div class="panel panel-default">
+                            <div class="panel panel-default alumni_card">
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-md-4">
@@ -73,11 +73,11 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>School : </b></div>
-                                                <div class="col-md-8"><?php if($edu->num_rows()>0) echo $edu_data->school_name; ?></div>
+                                                <div class="col-md-8"><?php if ($edu->num_rows() > 0) echo $edu_data->school_name; ?></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>Passout : </b></div>
-                                                <div class="col-md-8"><?php if($edu->num_rows()>0) echo $edu_data->passout_year; ?></div>
+                                                <div class="col-md-8"><?php if ($edu->num_rows() > 0) echo $edu_data->passout_year; ?></div>
                                             </div>
                                             <br/>
                                             <div class="row">
@@ -104,7 +104,6 @@
                         }
                     }
                     ?>		
-
                 </div><br/>
             </div>
             <hr class="style-seven"/>
@@ -233,3 +232,13 @@
     }
 
 </style>
+
+<script>
+    var heights = $(".alumni_card").map(function ()
+    {
+        return $(this).outerHeight();
+    }).get(),
+            maxHeight = Math.max.apply(null, heights);
+
+    $('.alumni_card').attr('style', 'height: ' + maxHeight + 'px');
+</script>
