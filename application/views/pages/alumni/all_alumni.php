@@ -14,6 +14,7 @@
             border-radius:5px;
             height: 30px;
             width: 30px;
+            transition: width 1s, height 1s;
         }
 
     .pic:hover {
@@ -95,7 +96,7 @@
                     <div class="row">
                         <div class="col-sm-1 media-left">
                                 <center>
-                                <a href="#">
+                                <a href="<?=site_url($row->profile_picture);?>">
                                     <img class="media-object pic" src="<?=base_url($row->profile_picture);?>" alt="pic">
                                 </a>
                                 </center>
