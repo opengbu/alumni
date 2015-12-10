@@ -10,6 +10,17 @@
         margin: 0px;
     }
 
+    .pic{
+            border-radius:5px;
+            height: 30px;
+            width: 30px;
+        }
+
+    .pic:hover {
+        height: 60px;
+        width: 60px;
+    } 
+
     h3{
         padding: 0px;
         margin: 0px;
@@ -23,11 +34,11 @@
     <?php
 	if($special=='all')
 	{
-		$select_rows = $this->db->query("select full_name, user_id from users order by user_id desc;");
+		$select_rows = $this->db->query("select full_name, profile_picture, user_id from users order by user_id desc;");
     }
 	else if($special=='distinguished') 
 	{
-		$select_rows = $this->db->query("select full_name, user_id from users where distinguished = '1' order by user_id desc;");
+		$select_rows = $this->db->query("select full_name, profile_picture, user_id from users where distinguished = '1' order by user_id desc;");
 	}
 	$sum = 0;
 	
@@ -37,6 +48,11 @@
             <b>
                 <li class="list-group-item">
                     <div class="row">
+                        <div class="col-sm-1">
+                            <center>
+                                Image
+                            </center>
+                        </div>
                         <div class="col-sm-3">
                             Name
                         </div>
@@ -49,7 +65,7 @@
 						<div class="col-sm-3">
                             Organization
                         </div>
-						<div class="col-sm-3">
+						<div class="col-sm-2">
                             Designation
                         </div>
                         <div class="col-sm-1">
@@ -77,6 +93,13 @@
 				?>
                 <li class="list-group-item list-group-item-<?=$color?>">
                     <div class="row">
+                        <div class="col-sm-1 media-left">
+                                <center>
+                                <a href="#">
+                                    <img class="media-object pic" src="<?=base_url($row->profile_picture);?>" alt="pic">
+                                </a>
+                                </center>
+                        </div>
 						<div class="col-sm-3">
 							<?= $row->full_name ?>
                         </div>
@@ -89,7 +112,7 @@
 						<div class="col-sm-3">
                             <?php if($work_q->num_rows()>0) echo $work->company_name ?>
                         </div>
-						<div class="col-sm-3">
+						<div class="col-sm-2">
                             <?php if($work_q->num_rows()>0) echo $work->designation ?>
                         </div>
                         <div class="col-sm-1">

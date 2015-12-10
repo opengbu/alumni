@@ -21,7 +21,7 @@
             <center>
                 <h2><span class="label label-danger">Alumni Community</span></h2>
                 <br><br>
-                <p>Gautam Buddha University alumni community has more than 3000 members.<br>
+                <p>Gautam Buddha University alumni community has more than <?=$this->db->query("select count(*) as num from users")->row()->num;?> members.<br>
                     The university aims to produce future leaders and entrepreneurs who can inspire the next generation.<br/>
                     The objective of this Alumni Community is to provide a platform to connect and discover GBUites present across the globe. 
                 </p>
@@ -35,7 +35,7 @@
 
 
         <div>
-            <h2 align="center"><span class="label label-danger">Recent Appointments</span></h2>
+            <h2 align="center"><span class="label label-danger">Recent Recruitments</span></h2>
             <br><br>
             <div class="container">
                 <div class="row">
