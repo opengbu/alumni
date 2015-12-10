@@ -55,7 +55,7 @@
                         $user = $this->db->query("SELECT full_name , profile_picture FROM users WHERE user_id = '$row->user_id' ");
                         $user_data = $user->row();
 
-                        $edu = $this->db->query("SELECT max(passout_year) as ps_yr FROM edu_info WHERE user_id = '$row->user_id' ");
+                        $edu = $this->db->query("SELECT passout_year, school_name from edu_info where user_id='$row->user_id' and passout_year IN (select max(passout_year) from edu_info where user_id = '$row->user_id');");
                         $edu_data = $edu->row();
                         ?>
 
@@ -73,11 +73,11 @@
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>School : </b></div>
-                                                <div class="col-md-8"><!--from DB--></div>
+                                                <div class="col-md-8"><?php if($edu->num_rows()>0) echo $edu_data->school_name; ?></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>Passout : </b></div>
-                                                <div class="col-md-8"><?= $edu_data->ps_yr ?></div>
+                                                <div class="col-md-8"><?php if($edu->num_rows()>0) echo $edu_data->passout_year; ?></div>
                                             </div>
                                             <br/>
                                             <div class="row">
