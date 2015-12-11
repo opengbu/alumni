@@ -261,9 +261,9 @@ $monthName = $dateObj->format('F'); // March
     <div class="rsvp col-xs-2 col-sm-2">
 
 	
-	<i><?php echo $row->day; ?></i>
-	  <i><?php echo $monthName; ?></i>
-	  <?php echo $row->year; ?>
+	<i><?php if($row->day == 0) echo "<small>Coming</small>"; else echo $row->day; ?></i>
+	  <i><?php if($row->month == 0) echo "<small>Soon</small>"; else echo $monthName; ?></i>
+	  <?php if($row->year != 0) echo $row->year; ?>
       <div class="hidden-xs">
         <span class="fa fa-thumbs-up fa-2x"></span>
         <span class="fa fa-thumbs-down fa-2x"></span>
