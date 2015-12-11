@@ -101,19 +101,19 @@
                                 </a>
                                 </center>
                         </div>
-						<div class="col-sm-3">
+						<div class="col-sm-3 tolower">
 							<?= $row->full_name ?>
                         </div>
-						<div class="col-sm-1">
+						<div class="col-sm-1 tolower">
 							<?php if($edu_q->num_rows()>0) echo $edu->school_name ?>
                         </div>
                         <div class="col-sm-1">
                             <?php if($edu_q->num_rows()>0) echo $edu->passout_year ?>
                         </div>
-						<div class="col-sm-3">
+						<div class="col-sm-3 tolower">
                             <?php if($work_q->num_rows()>0) echo $work->company_name ?>
                         </div>
-						<div class="col-sm-2">
+						<div class="col-sm-2 tolower">
                             <?php if($work_q->num_rows()>0) echo $work->designation ?>
                         </div>
                         <div class="col-sm-1">
@@ -133,3 +133,19 @@
     ?>
 </div>
 </div>
+
+<script>
+    var card_arr = document.getElementsByClassName("tolower");
+    var i;
+    for(i=0;i<card_arr.length;i++)
+    {
+        card_arr[i].innerHTML = card_arr[i].innerHTML.toLowerCase();
+    }
+</script>
+
+<style>
+.tolower
+    {
+        text-transform: capitalize;
+    }
+</style>

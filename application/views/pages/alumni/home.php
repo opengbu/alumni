@@ -2,6 +2,11 @@
     hr.style-seven 
     { height: 30px; border-style: solid; border-color: black; border-width: 1px 0 0 0; border-radius: 20px; }
     hr.style-seven:before { /* Not really supposed to work, but does */ display: block; content: ""; height: 30px; margin-top: -31px; border-style: solid; border-color: black; border-width: 0 0 1px 0; border-radius: 20px; }
+
+    .pic
+    {
+        border-radius: 4px;
+    }
 </style>
 
 <div class="container-fluid" style=" margin-right: 10px; margin-left: 10px;" >
@@ -64,16 +69,16 @@
                                 <div class="panel-body">
                                     <div class="row">
                                         <div class="col-md-4">
-                                            <img src="<?php echo base_url() . $user_data->profile_picture ?>" height="170" width="130"/>
+                                            <img class="pic" src="<?php echo base_url() . $user_data->profile_picture ?>" height="170" width="130"/>
                                         </div>
                                         <div class="col-md-8" id="spn">
                                             <div class="row">
                                                 <div class="col-md-4"><b>Name : </b></div>
-                                                <div class="col-md-8"><?= $user_data->full_name ?></div>
+                                                <div class="col-md-8 tolower"><?= $user_data->full_name ?></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>School : </b></div>
-                                                <div class="col-md-8"><?php if ($edu->num_rows() > 0) echo $edu_data->school_name; ?></div>
+                                                <div class="col-md-8 tolower"><?php if ($edu->num_rows() > 0) echo $edu_data->school_name; ?></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>Passout : </b></div>
@@ -82,15 +87,15 @@
                                             <br/>
                                             <div class="row">
                                                 <div class="col-md-4"><b>Joined : </b></div>
-                                                <div class="col-md-8"><?= $work_data->company_name ?></div>
+                                                <div class="col-md-8 tolower"><?= $work_data->company_name ?></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>Position : </b></div>
-                                                <div class="col-md-8"><?= $work_data->designation ?></div>
+                                                <div class="col-md-8 tolower"><?= $work_data->designation ?></div>
                                             </div>
                                             <div class="row">
                                                 <div class="col-md-4"><b>Location : </b></div>
-                                                <div class="col-md-8"><?= $work_data->location ?></div>
+                                                <div class="col-md-8 tolower"><?= $work_data->location ?></div>
                                             </div>
                                         </div>
                                     </div>
@@ -134,6 +139,15 @@
 </div>
 <br><br>
 
+<script>
+    var card_arr = document.getElementsByClassName("tolower");
+    var i;
+    for(i=0;i<card_arr.length;i++)
+    {
+        card_arr[i].innerHTML = card_arr[i].innerHTML.toLowerCase();
+    }
+</script>
+
 <style>
     #tn {
         border: 1px outset gray;
@@ -142,7 +156,10 @@
     {
         font-size:17px;
     }
-
+    .tolower
+    {
+        text-transform: capitalize;
+    }
 
 
     /*=========================
