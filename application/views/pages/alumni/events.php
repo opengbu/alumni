@@ -192,7 +192,7 @@ hr {
 		<img  src="<?php echo $this->cdn->res_url('resources/images/image2.jpg')?>" height="300px" width="1300px"/>
 		<div class=" col-md-10">
 			
-			 <h1 style="font-family:'Oswald', sans-serif ;"> <b><u> EVENTS</u></b> </h1>
+			<!-- <h1 style="font-family:'Oswald', sans-serif ;"> <b><u> EVENTS</u></b> </h1>
 			 
 				<font color="#5e746b">
 				 <p>
@@ -206,17 +206,17 @@ hr {
 				 Fall’s Alumni Weekend offers great personal and career connections. 
 				 Winter offers a full season of celebration with holiday festivities, sporting events, and more for you and your fellow alumni. 
 				 Check out the events calendar so you won’t miss a thing.</h4>
-				 </p></font>
+				 </p></font>-->
 		</div>
 		<div  class=" col-md-2">
 		
-			<h3><span class="label label-default">QUICK LINKS</span></h3><hr />
+		<!--	<h3><span class="label label-default">QUICK LINKS</span></h3><hr />
 
 		
 			
 			<u><a style="color: #0c0d49" href="http://www.gbuonline.in/feat/placements" target="_blank">Placement</a></u><br><br>
 			<u><a style="color: #0c0d49" href="http://www.gbuonline.in/blogs/recent_blogs" target="_blank">Blogs</a> </u><br><br>
-			<u><a style="color: #0c0d49" href="">Alumni Weekend</a></u> 
+			<u><a style="color: #0c0d49" href="">Alumni Weekend</a></u> -->
 		
 			
 		
