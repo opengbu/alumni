@@ -46,7 +46,8 @@
 		<a href="https://careers.stackoverflow.com/varun-garg" target="_blank">Varun Garg</a><br/>
 		<a href="https://in.linkedin.com/in/rajat24" target="_blank">Rajat Saxena</a><br/>
 		<a href="https://github.com/rishabh279" target="_blank">Rishabh Ahuja</a><br/><br />
-		<b>Maintained By</b><br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/><br />
+		<b>Helped By</b><br/> <a href="<?=site_url('open_source');?>" >Open Source Community</a><br/><br />
+    <b>Maintained By</b><br/> <a href="https://github.com/opengbu" target="_blank">OpenGBU, Inc</a><br/><br />
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
