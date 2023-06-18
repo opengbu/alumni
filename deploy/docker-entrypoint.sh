@@ -17,9 +17,12 @@ fi
 
 sed -i -e "s/cfg\['blowfish_secret'\] = ''/cfg['blowfish_secret'] = '`date | md5sum`'/" /var/www/phpmyadmin/config.inc.php
 
+/tmp/docker-sync-ids.sh
+
 mkdir -p /var/run/mysqld
 chmod -R 777 /var/run/mysqld
 rm /var/run/mysqld/mysqld.sock
+chmod 777 -R /var/log/
 
 if [[ ! -d $VOLUME_HOME/mysql ]]; then
     echo "=> An empty or uninitialized MySQL volume is detected in $VOLUME_HOME"

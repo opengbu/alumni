@@ -10,6 +10,12 @@ services:
     volumes:
       - .:/app
       - ./db:/var/lib/mysql
+    # uid/gid lists from host
+      - /etc/passwd:/etc/passwd.src:ro
+      - /etc/group:/etc/group.src:ro
+    environment:
+      - host_users=www-data,mysql
+      - host_groups=www-data,mysql,staff
     ports:
       - "8081:80"
     ulimits:
